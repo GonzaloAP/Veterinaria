@@ -1,0 +1,22 @@
+Veterinaria
+
+//Usuario ya esta
+php artisan crud:generate Usuario --fields_from_file="generador/usuario.json" --view-path=admin --controller-namespace=UsuarioController --route-group=admin
+//Cliente ya esta
+php artisan crud:generate Cliente --fields_from_file="generador/cliente.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Estado ya esta
+php artisan crud:generate Estado --fields_from_file="generador/estado.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Personal ya esta
+php artisan crud:generate Personal --fields_from_file="generador/personal.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Mascota ya esta
+php artisan crud:generate Mascota --fields_from_file="generador/mascota.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Servicio ya esta
+php artisan crud:generate Servicio --fields_from_file="generador/servicio.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Promocion ya esta
+php artisan crud:generate Promocion --fields_from_file="generador/promocion.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Ficha ya esta
+php artisan crud:generate Ficha --fields_from_file="generador/fichaatencion.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Detalle falta
+php artisan crud:generate Detalle --fields_from_file="generador/detalle.json" --view-path=admin --controller-namespace=Controladores --route-group=admin
+//Tratamiento falta
+php artisan crud:generate Detalle --fields_from_file="generador/detalle.json" --view-path=admin --controller-namespace=Controladores --route-group=admin

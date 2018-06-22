@@ -1,0 +1,42 @@
+{
+  "fields": [
+    {
+      "name": "nick",
+      "type": "string"
+    },
+    {
+      "name": "email",
+      "type": "string"
+    },
+    {
+      "name": "password",
+      "type": "string"
+    },
+    {
+            "name": "tipo",
+            "type": "select",
+            "options": {
+                "cliente": "cliente",
+                "administrador": "administrador"
+            }
+    }
+  ],
+  "validations": [
+    {
+      "field": "nick",
+      "rules": "required"
+    },
+    {
+      "field": "email",
+      "rules": "required|max:50"
+    },
+    {
+      "field": "password",
+      "rules": "required|max:20"
+    },
+    {
+      "field": "tipo",
+      "rules": "required"
+    }
+  ]
+}

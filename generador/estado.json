@@ -1,0 +1,18 @@
+{
+  "fields": [    
+    {
+            "name": "descripcion",
+            "type": "select",
+            "options": {
+                "Libre": "Libre",
+                "Reserva": "Reserva"
+            }
+    }
+  ],
+  "validations": [
+    {
+      "field": "descripcion",
+      "rules": "required"
+    }
+  ]
+}

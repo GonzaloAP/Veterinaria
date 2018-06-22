@@ -1,0 +1,39 @@
+{
+  "fields": [  
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "apellido",
+      "type": "string"
+    },
+    {
+      "name": "ci",
+      "type": "integer"
+    },
+    {
+      "name": "telefono",
+      "type": "integer"
+    }
+  ],
+  
+  "validations": [
+    {
+      "field": "nombre",
+      "rules": "required|max:50"
+    },
+    {
+      "field": "apellido",
+      "rules": "required|max:50"
+    },
+    {
+      "field": "ci",
+      "rules": "required|max:10"
+    },    
+    {
+      "field": "telefono",
+      "rules": "required|max:10"
+    }
+  ]
+}

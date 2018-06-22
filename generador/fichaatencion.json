@@ -1,0 +1,38 @@
+{
+  "fields": [  
+    {
+      "name": "fecha",
+      "type": "date"
+    },
+    {
+      "name": "idEstado",
+      "type": "integer"
+    },
+    {
+      "name": "idMascota",
+      "type": "integer"
+    }
+  ],
+
+   "foreign_keys": [
+    {
+      "column": "idEstado",
+      "references": "id",
+      "on": "estado",
+      "onDelete": "cascade"
+    },
+     {
+      "column": "idMascota",
+      "references": "id",
+      "on": "mascota",
+      "onDelete": "cascade"
+    }
+  ],
+  
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    }
+  ]
+}

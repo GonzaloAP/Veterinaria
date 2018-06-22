@@ -1,0 +1,27 @@
+{
+  "fields": [  
+    {
+      "name": "idFicha",
+      "type": "integer"
+    },
+    {
+      "name": "idServicio",
+      "type": "integer"
+    }
+  ],
+
+   "foreign_keys": [
+    {
+      "column": "idFicha",
+      "references": "id",
+      "on": "fichaatencion",
+      "onDelete": "cascade"
+    },
+     {
+      "column": "idServicio",
+      "references": "id",
+      "on": "servicio",
+      "onDelete": "cascade"
+    }
+  ]
+}
