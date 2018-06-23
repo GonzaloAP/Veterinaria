@@ -19,7 +19,8 @@ class CreatePersonalTable extends Migration
             $table->string('apellido');
             $table->integer('ci')->unique();
             $table->integer('telefono');
-            $table->boolean('estado');             
+            $table->boolean('estado');           
+            $table->timestamps();  
         });
     }
 

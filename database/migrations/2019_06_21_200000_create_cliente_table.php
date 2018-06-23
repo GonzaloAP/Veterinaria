@@ -20,7 +20,8 @@ class CreateClienteTable extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('email')->unique();
-            $table->boolean('estado');           
+            $table->boolean('estado');  
+            $table->timestamps();         
         });
     }
 

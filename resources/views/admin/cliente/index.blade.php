@@ -1,63 +1,58 @@
-@extends('layouts.app')
+@extends('home')
 
-@section('content')
-    <div class="container">
-        <div class="row">
-            @include('admin.sidebar')
+@section('contenido')
 
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Cliente</div>
-                    <div class="card-body">
-                        <a href="{{ url('/admin/cliente/create') }}" class="btn btn-success btn-sm" title="Add New Cliente">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
-                        </a>
-
-                        <form method="GET" action="{{ url('/admin/cliente') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
-                                <span class="input-group-append">
-                                    <button class="btn btn-secondary" type="submit">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
-
-                        <br/>
-                        <br/>
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th><th>Nombre</th><th>Apellido</th><th>Telefono</th><th>Actions</th>
-                                    </tr>
-                                </thead>
+                    <div class="panel">
+					    <div class="panel-heading">
+                            </br>
+					        <h3 class="panel-title" style="font-size:20px;text-align:center">Clientes</h3>
+					    </div>
+					    <div class="panel-body">
+                            <a href="{{ url('/admin/cliente/create') }}" class="btn btn-success" title="Nuevo CLiente">                                
+                                <i class="demo-pli-add" aria-hidden="true"></i> Nuevo
+                            </a>					        
+					        <table id="demo-custom-toolbar" class="demo-add-niftycheck" data-toggle="table"
+					               data-url="data/bs-table.json"
+					               data-toolbar="#demo-delete-row"
+					               data-search="true"
+					               data-show-refresh="true"
+					               data-show-toggle="true"
+					               data-show-columns="true"
+					               data-sort-name="id"
+					               data-page-list="[5, 10, 20]"
+					               data-page-size="5"
+					               data-pagination="true" data-show-pagination-switch="true">
+					            <thead>
+					                <tr>
+					                    <th data-field="id" data-sortable="true">#</th>
+					                    <th data-field="nombre" data-sortable="true">Nombre</th>
+					                    <th data-field="apellido" data-sortable="true">Apellido</th>
+					                    <th data-field="number_format">Telefono</th>
+					                    <th data-field="acciones" data-align="center">Acciones</th>
+					                </tr>
+					            </thead>
                                 <tbody>
                                 @foreach($cliente as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->nombre }}</td><td>{{ $item->apellido }}</td><td>{{ $item->telefono }}</td>
-                                        <td>
-                                            <a href="{{ url('/admin/cliente/' . $item->id) }}" title="View Cliente"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/cliente/' . $item->id . '/edit') }}" title="Edit Cliente"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                        <td data-field="id">{{ $loop->iteration or $item->id }}</td>
+                                        <td data-field="nombre">{{ $item->nombre }}</td>
+                                        <td data-field="apellido">{{ $item->apellido }}</td>
+                                        <td data-field="number_format">{{ $item->telefono }}</td>
+                                        <td data-field="acciones">
+                                            <a href="{{ url('/admin/cliente/' . $item->id) }}" title="View Cliente"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver</button></a>
+                                            <a href="{{ url('/admin/cliente/' . $item->id . '/edit') }}" title="Edit Cliente"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
 
                                             <form method="POST" action="{{ url('/admin/cliente' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Cliente" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Cliente" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
-                            </table>
-                            <div class="pagination-wrapper"> {!! $cliente->appends(['search' => Request::get('search')])->render() !!} </div>
-                        </div>
+					        </table>
+					    </div>
+					</div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @endsection

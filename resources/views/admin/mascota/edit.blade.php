@@ -1,18 +1,13 @@
-@extends('layouts.app')
+@extends('home')
 
-@section('content')
+@section('contenido')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Edit Mascotum #{{ $mascotum->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/mascota') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
-
                         @if ($errors->any())
                             <ul class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
@@ -25,7 +20,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('admin.mascota.form', ['submitButtonText' => 'Update'])
+                            @include ('admin.mascota.form', ['submitButtonText' => 'Guardar'])
 
                         </form>
 

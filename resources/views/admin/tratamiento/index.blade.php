@@ -7,13 +7,13 @@
 
             <div class="col-md-9">
                 <div class="card">
-                    <div class="card-header">Detalle</div>
+                    <div class="card-header">Tratamiento</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/detalle/create') }}" class="btn btn-success btn-sm" title="Add New Detalle">
+                        <a href="{{ url('/admin/tratamiento/create') }}" class="btn btn-success btn-sm" title="Add New Tratamiento">
                             <i class="fa fa-plus" aria-hidden="true"></i> Add New
                         </a>
 
-                        <form method="GET" action="{{ url('/admin/detalle') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
+                        <form method="GET" action="{{ url('/admin/tratamiento') }}" accept-charset="UTF-8" class="form-inline my-2 my-lg-0 float-right" role="search">
                             <div class="input-group">
                                 <input type="text" class="form-control" name="search" placeholder="Search..." value="{{ request('search') }}">
                                 <span class="input-group-append">
@@ -30,29 +30,29 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>IdFicha</th><th>IdServicio</th><th>Actions</th>
+                                        <th>#</th><th>Descripcion</th><th>Fechar</th><th>Plazo</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($detalle as $item)
+                                @foreach($tratamiento as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->idFicha }}</td><td>{{ $item->idServicio }}</td>
+                                        <td>{{ $item->descripcion }}</td><td>{{ $item->fechar }}</td><td>{{ $item->plazo }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/detalle/' . $item->id) }}" title="View Detalle"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
-                                            <a href="{{ url('/admin/detalle/' . $item->id . '/edit') }}" title="Edit Detalle"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
+                                            <a href="{{ url('/admin/tratamiento/' . $item->id) }}" title="View Tratamiento"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
+                                            <a href="{{ url('/admin/tratamiento/' . $item->id . '/edit') }}" title="Edit Tratamiento"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
-                                            <form method="POST" action="{{ url('/admin/detalle' . '/' . $item->idFicha) }}" accept-charset="UTF-8" style="display:inline">
+                                            <form method="POST" action="{{ url('/admin/tratamiento' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Detalle" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Tratamiento" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="pagination-wrapper"> {!! $detalle->appends(['search' => Request::get('search')])->render() !!} </div>
+                            <div class="pagination-wrapper"> {!! $tratamiento->appends(['search' => Request::get('search')])->render() !!} </div>
                         </div>
 
                     </div>

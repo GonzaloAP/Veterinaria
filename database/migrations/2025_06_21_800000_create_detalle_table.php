@@ -14,12 +14,13 @@ class CreateDetalleTable extends Migration
     public function up()
     {
         Schema::create('detalle', function (Blueprint $table) {
-            $table->integer('idFicha');
-            $table->integer('idServicio');
-            $table->primary(['idFicha','idServicio']);            
+            $table->increments('id');
+            $table->integer('idficha')->unsigned();
+            $table->integer('idservicio')->unsigned();              
             $table->boolean('estado');          
-            $table->foreign('idFicha')->references('id')->on('fichaatencion')->onDelete('cascade')->onUpdate('cascade');                    
-            $table->foreign('idServicio')->references('id')->on('servicio')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idficha')->references('id')->on('fichaatencion')->onDelete('cascade')->onUpdate('cascade');                    
+            $table->foreign('idservicio')->references('id')->on('servicio')->onDelete('cascade')->onUpdate('cascade');
+            $table->timestamps();
         });
     }
 

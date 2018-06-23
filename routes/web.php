@@ -17,3 +17,4 @@ Route::resource('admin/servicio', 'Controladores\\ServicioController');
 Route::resource('admin/promocion', 'Controladores\\PromocionController');
 Route::resource('admin/ficha', 'Controladores\\FichaController');
 Route::resource('admin/detalle', 'Controladores\\DetalleController');
+Route::resource('admin/tratamiento', 'Controladores\\TratamientoController');

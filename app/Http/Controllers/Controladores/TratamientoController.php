@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\UsuarioController;
+namespace App\Http\Controllers\Controladores;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\User;
+use App\Tratamiento;
 use Illuminate\Http\Request;
 
-class UsuarioController extends Controller
+class TratamientoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,17 +21,16 @@ class UsuarioController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $usuario = User::where('nick', 'LIKE', "%$keyword%")
-                ->orWhere('email', 'LIKE', "%$keyword%")
-                ->orWhere('password', 'LIKE', "%$keyword%")
-                ->orWhere('tipo', 'LIKE', "%$keyword%")
+            $tratamiento = Tratamiento::where('descripcion', 'LIKE', "%$keyword%")
+                ->orWhere('fechar', 'LIKE', "%$keyword%")
+                ->orWhere('plazo', 'LIKE', "%$keyword%")
+                ->orWhere('iddetalle', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $usuario = User::_getUsuarios()->paginate($perPage);
-            //return json_encode(array($usuario));
+            $tratamiento = Tratamiento::_getTratamientos()->paginate($perPage);
         }
 
-        return view('admin.usuario.index', compact('usuario'));
+        return view('admin.tratamiento.index', compact('tratamiento'));
     }
 
     /**
@@ -41,8 +40,7 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        
-        return view('admin.usuario.create');
+        return view('admin.tratamiento.create');
     }
 
     /**
@@ -55,20 +53,18 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'nick' => 'required',
-			'email' => 'required|max:50',
-			'password' => 'required|max:20',
-			'tipo' => 'required'
-		]);      
-        
-        User::create([
-            'nick' =>$request->nick,
-            'email' =>$request->email,
-            'password' =>bcrypt($request->password),
-            'tipo' =>$request->tipo,            
-            'estado' => TRUE,
+			'descripcion' => 'required|max:30',
+			'fechar' => 'required',
+			'plazo' => 'required'
+		]);
+        Tratamiento::create([
+            'descripcion' =>$request->descripcion,
+            'fechar' =>$request->fechar,
+            'plazo' =>$request->plazo,            
+            'estado'=>true,
         ]);
-        return redirect('admin/usuario')->with('flash_message', 'Usuario Registrado!');
+
+        return redirect('admin/tratamiento')->with('flash_message', 'Tratamiento added!');
     }
 
     /**
@@ -80,9 +76,9 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        $usuario = User::findOrFail($id);
+        $tratamiento = Tratamiento::findOrFail($id);
 
-        return view('admin.usuario.show', compact('usuario'));
+        return view('admin.tratamiento.show', compact('tratamiento'));
     }
 
     /**
@@ -94,9 +90,9 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        $usuario = User::findOrFail($id);
+        $tratamiento = Tratamiento::findOrFail($id);
 
-        return view('admin.usuario.edit', compact('usuario'));
+        return view('admin.tratamiento.edit', compact('tratamiento'));
     }
 
     /**
@@ -110,17 +106,16 @@ class UsuarioController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'nick' => 'required',
-			'email' => 'required|max:50',
-			'password' => 'required',
-			'tipo' => 'required'
+			'descripcion' => 'required|max:30',
+			'fechar' => 'required',
+			'plazo' => 'required'
 		]);
         $requestData = $request->all();
         
-        $usuario = User::findOrFail($id);
-        $usuario->update($requestData);
+        $tratamiento = Tratamiento::findOrFail($id);
+        $tratamiento->update($requestData);
 
-        return redirect('admin/usuario')->with('flash_message', 'Usuario updated!');
+        return redirect('admin/tratamiento')->with('flash_message', 'Tratamiento updated!');
     }
 
     /**
@@ -132,11 +127,11 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        $usuario = User::findOrFail($id);
+        $tratamiento = Tratamiento::findOrFail($id);
 
-        $usuario->estado = false;
-        $usuario->save();
+        $tratamiento->estado = false;
+        $tratamiento->save();
 
-        return redirect('admin/usuario')->with('flash_message', 'Usuario deleted!');
+        return redirect('admin/tratamiento')->with('flash_message', 'Tratamiento deleted!');
     }
 }

@@ -4,40 +4,37 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Detalle extends Model
+class Tratamiento extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'detalle';
+    protected $table = 'tratamiento';
 
     /**
     * The database primary key value.
     *
     * @var string
     */
-    protected $primarykey = 'id';
-
-    public $timestamps = false;
+    protected $primaryKey = 'id';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['idFicha', 'idServicio','estado'];
+    protected $fillable = ['descripcion', 'fechar', 'plazo', 'iddetalle','estado'];
 
     /*Funciones*/
-    public function scope_getDetalles($query)
+    public function scope_getTratamientos($query)
     {
-    $detalle =
+    $tratamiento =
         $query
-            ->select('id','idFicha','idServicio')
+            ->select('id','descripcion','fechar','plazo','iddetalle')
             ->where('estado',true)
-            ->orderBy('idFicha','desc');
-    return $detalle;
+            ->orderBy('id','desc');
+    return $tratamiento;
     }
-    
 }

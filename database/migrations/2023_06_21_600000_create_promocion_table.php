@@ -16,10 +16,11 @@ class CreatePromocionTable extends Migration
         Schema::create('promocion', function (Blueprint $table) {
             $table->increments('id');
             $table->string('descripcion');
-            $table->integer('descuento');          
-            $table->integer('idServicio');
+            $table->float('descuento');          
+            $table->integer('idservicio')->unsigned();
             $table->boolean('estado');          
-            $table->foreign('idServicio')->references('id')->on('servicio')->onDelete('cascade')->onUpdate('cascade');                    
+            $table->foreign('idservicio')->references('id')->on('servicio')->onDelete('cascade')->onUpdate('cascade');                    
+            $table->timestamps();
         });
     }
 

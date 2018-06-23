@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('home')
 
-@section('content')
+@section('contenido')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
+
 
             <div class="col-md-9">
                 <div class="card">
@@ -30,14 +30,14 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>#</th><th>Nick</th><th>Email</th><th>Password</th><th>Actions</th>
+                                        <th>#</th><th>Nick</th><th>Email</th><th>Tipo</th><th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($usuario as $item)
                                     <tr>
                                         <td>{{ $loop->iteration or $item->id }}</td>
-                                        <td>{{ $item->nick }}</td><td>{{ $item->email }}</td><td>{{ $item->password }}</td>
+                                        <td>{{ $item->nick }}</td><td>{{ $item->email }}</td><td>{{$item->tipo}}</td>
                                         <td>
                                             <a href="{{ url('/admin/usuario/' . $item->id) }}" title="View Usuario"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> View</button></a>
                                             <a href="{{ url('/admin/usuario/' . $item->id . '/edit') }}" title="Edit Usuario"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>

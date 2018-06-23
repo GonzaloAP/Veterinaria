@@ -20,9 +20,10 @@ class CreateMascotaTable extends Migration
             $table->string('raza');
             $table->string('sexo');
             $table->integer('edad');
-            $table->integer('idCliente');
-            $table->foreign('idCliente')->references('id')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('idcliente');
+            $table->foreign('idcliente')->references('id')->on('cliente')->onDelete('cascade')->onUpdate('cascade');
             $table->boolean('estado');        
+            $table->timestamps();
         });
     }
 
