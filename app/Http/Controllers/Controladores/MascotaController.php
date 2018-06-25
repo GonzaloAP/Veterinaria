@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Controladores;
 
+use App\Cliente;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -42,7 +43,9 @@ class MascotaController extends Controller
      */
     public function create()
     {
-        return view('admin.mascota.create');
+        $cliente = Cliente::_getClientesId()->get();
+       // return json_encode(array('key'=> $cliente));
+        return view('admin.mascota.create',compact('cliente'));
     }
 
     /**
@@ -61,16 +64,18 @@ class MascotaController extends Controller
 			'sexo' => 'required',
             'edad' => 'required'
 		]);
+
         Mascotum::create([
             'nombre' =>$request->nombre,
             'especie' =>$request->especie,
             'raza' =>$request->raza,
             'sexo' =>$request->sexo,            
             'edad' => $request->edad,
-            'idCliente' => $request->idCliente,
+            'idcliente' => $request->cliente,
             'estado'=>true,
         ]);
 
+        //return json_encode(array('ls'=>$request->cliente));
         return redirect('admin/mascota')->with('flash_message', 'Mascotum added!');
     }
 
@@ -98,8 +103,8 @@ class MascotaController extends Controller
     public function edit($id)
     {
         $mascotum = Mascotum::findOrFail($id);
-
-        return view('admin.mascota.edit', compact('mascotum'));
+        $cliente = Cliente::_getClientesId()->get();
+        return view('admin.mascota.edit', compact('mascotum','cliente'));
     }
 
     /**
@@ -122,8 +127,17 @@ class MascotaController extends Controller
         $requestData = $request->all();
         
         $mascotum = Mascotum::findOrFail($id);
-        $mascotum->update($requestData);
 
+        $mascotum->nombre = $request->get('nombre');
+        $mascotum->especie = $request->get('especie');
+        $mascotum->raza = $request->get('raza');
+        $mascotum->sexo = $request->get('sexo');
+        $mascotum->edad = $request->get('edad');
+        $mascotum->idcliente = $request->get('cliente');
+        $mascotum->update();
+
+        //$mascotum->update($requestData);
+        //return json_encode(array('s'=>$mascotum));
         return redirect('admin/mascota')->with('flash_message', 'Mascotum updated!');
     }
 

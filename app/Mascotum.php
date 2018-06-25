@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Mascotum extends Model
 {
     /**
@@ -27,16 +28,17 @@ class Mascotum extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'especie', 'raza', 'sexo', 'edad', 'idCliente','estado'];
+    protected $fillable = ['nombre', 'especie', 'raza', 'sexo', 'edad', 'idcliente','estado'];
 
      /*Funciones*/
      public function scope_getMascotas($query)
      {
      $mascota =
          $query
-             ->select('id','nombre','especie','raza','sexo','edad','idCliente')
+             ->select('id','nombre','especie','raza','sexo','edad','idcliente')
              ->where('estado',true)
              ->orderBy('id','desc');
      return $mascota;
      }
+
 }

@@ -167,7 +167,7 @@
 
                 <div class="pad-all text-center">
                     <h3>Veterinaria Online.</h3>
-                    <p1>Scroll down to see quick links and overviews of your Server, To do list, Order status or get some Help using Nifty.</p>
+                    <p>Scroll down to see quick links and overviews of your Server, To do list, Order status or get some Help using Nifty.</p>
                 </div>
             </div>
 
@@ -178,8 +178,6 @@
 
                 <!--Contenido-->
                 @yield('contenido')
-
-
             </div>
             <!--===================================================-->
             <!--End page content-->
@@ -711,7 +709,9 @@
 <script src="{{asset('js/nifty.min.js')}}"></script>
 
 <!--Demo script [ DEMONSTRATION ]-->
+{{--
 <script src="{{asset('js/demo/nifty-demo.min.js')}}"></script>
+--}}
 
 <!--Flot Chart [ OPTIONAL ]-->
 <script src="{{asset('plugins/flot-charts/jquery.flot.min.js')}}"></script>

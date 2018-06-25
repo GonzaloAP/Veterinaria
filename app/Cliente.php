@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Cliente extends Model
 {
@@ -38,6 +39,14 @@ class Cliente extends Model
             ->where('estado',true)
             ->orderBy('id','desc');
     return $cliente;
+    }
+
+    public function scope_getClientesId($query)
+    {
+        $cliente = $query
+            ->select(DB::raw('concat(nombre," ",apellido) as nombre'),'id')->distinct()
+            ->where ('estado',true);
+        return $cliente;
     }
     
 }

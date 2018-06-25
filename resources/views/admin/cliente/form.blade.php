@@ -27,7 +27,7 @@
                 </div><div class="form-group {{ $errors->has('telefono') ? 'has-error' : ''}}">
                     <label for="telefono" class="col-md-3 control-label">{{ 'Telefono' }}</label>
                     <div class="col-md-8">
-                        <input class="form-control" name="telefono" type="text" id="telefono" value="{{ $cliente->telefono or ''}}" required>
+                        <input class="form-control" name="telefono" type="number" id="telefono" value="{{ $cliente->telefono or ''}}" required>
                         {!! $errors->first('telefono', '<p class="help-block">:message</p>') !!}
                     </div>
                 </div><div class="form-group {{ $errors->has('direccion') ? 'has-error' : ''}}">

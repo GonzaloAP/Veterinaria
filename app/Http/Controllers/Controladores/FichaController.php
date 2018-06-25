@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Controladores;
 
+use App\Estado;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Ficha;
+use App\Mascotum;
 use Illuminate\Http\Request;
 
 class FichaController extends Controller
@@ -39,7 +41,10 @@ class FichaController extends Controller
      */
     public function create()
     {
-        return view('admin.ficha.create');
+        $estado = Estado::_getEstados()->get();
+        $mascota = Mascotum::_getMascotas()->get();
+        //return json_encode(array('s'=>$mascota));
+        return view('admin.ficha.create',compact('estado','mascota'));
     }
 
     /**
@@ -56,8 +61,8 @@ class FichaController extends Controller
 		]);
         Ficha::create([
             'fecha' =>$request->fecha,
-            'idEstado' =>$request->idEstado,
-            'idMascota' =>$request->idMascota,            
+            'idestado' =>$request->estado,
+            'idmascota' =>$request->mascota,
             'estado'=>true,
         ]);
 
@@ -73,8 +78,9 @@ class FichaController extends Controller
      */
     public function show($id)
     {
-        $ficha = Ficha::findOrFail($id);
-
+        //$ficha = Ficha::findOrFail($id);
+        $ficha = Ficha::_getFichaDetalle($id)->get()->first();
+      //  return json_encode(array('key'=>$ficha));
         return view('admin.ficha.show', compact('ficha'));
     }
 

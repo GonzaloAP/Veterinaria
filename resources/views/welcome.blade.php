@@ -155,18 +155,7 @@
 
                 <!--Search-->
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <li>
-                    <div class="custom-search-form">
-                        <label class="btn btn-trans" for="search-input" data-toggle="collapse" data-target="#nav-searchbox">
-                            <i class="demo-pli-magnifi-glass"></i>
-                        </label>
-                        <form>
-                            <div class="search-container collapse" id="nav-searchbox">
-                                <input id="search-input" type="text" class="form-control" placeholder="Busca Algo...">
-                            </div>
-                        </form>
-                    </div>
-                </li>
+
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End Search-->
 
@@ -201,166 +190,392 @@
     <!--CONTENT CONTAINER-->
     <!--===================================================-->
     <div id="content-container">
+        <div id="page-head">
 
+            <div class="pad-all text-center">
+                <h3>Veterinaria VLG.</h3>
+                <p>Por que el cuidado de tu mascota es tan importante para nosotros como lo es para ti.</p>
+            </div>
+        </div>
         <!--Page content-->
         <!--===================================================-->
         <div id="page-content">
-            <h4>Veterinaria VLG</h4>
             <div class="panel">
                 <div class="pad-all">
                     <div id="demo-gallery-2" style="display:none;">
 
                         <a href="#">
                             <img alt="The winding road"
-                                 src="img/gallery/thumbs/tile1.jpg"
-                                 data-image="img/gallery/big/tile1.jpg"
+                                 src="img/gallery/thumbs/1.jpg"
+                                 data-image="img/gallery/thumbs/1.jpg"
                                  data-description="The winding road description"
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Pancake"
-                                 src="img/gallery/thumbs/tile2.jpg"
-                                 data-image="img/gallery/big/tile2.jpg"
+                                 src="img/gallery/thumbs/2.jpg"
+                                 data-image="img/gallery/thumbs/2.jpg"
                                  data-description="A pancake is a flat cake, often thin and round, prepared from a starch-based batter"
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Foreshore"
-                                 src="img/gallery/thumbs/tile3.jpg"
-                                 data-image="img/gallery/big/tile3.jpg"
+                                 src="img/gallery/thumbs/3.png"
+                                 data-image="img/gallery/thumbs/3.png"
                                  data-description="The part of a shore between high- and low-water marks, or between the water and cultivated or developed land."
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Yellow Flowers"
-                                 src="img/gallery/thumbs/tile4.jpg"
-                                 data-image="img/gallery/big/tile4.jpg"
+                                 src="img/gallery/thumbs/4.jpg"
+                                 data-image="img/gallery/thumbs/4.jpg"
                                  data-description="Those are yellow flowers"
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Waterfall"
-                                 src="img/gallery/thumbs/tile5.jpg"
-                                 data-image="img/gallery/big/tile5.jpg"
+                                 src="img/gallery/thumbs/5.jpg"
+                                 data-image="img/gallery/thumbs/5.jpg"
                                  data-description="A waterfall is a place where water flows over a vertical drop or a series of steep drops in the course of a stream or river."
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Pumpkin"
-                                 src="img/gallery/thumbs/tile6.jpg"
-                                 data-image="img/gallery/big/tile6.jpg"
+                                 src="img/gallery/thumbs/6.jpg"
+                                 data-image="img/gallery/thumbs/6.jpg"
                                  data-description="A pumpkin is a cultivar of a squash plant, most commonly of Cucurbita pepo, that is round, with smooth, slightly ribbed skin, and deep yellow to orange coloration."
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="In the jungle"
-                                 src="img/gallery/thumbs/tile7.jpg"
-                                 data-image="img/gallery/big/tile7.jpg"
+                                 src="img/gallery/thumbs/7.jpg"
+                                 data-image="img/gallery/thumbs/7.jpg"
                                  data-description="This is my car"
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Note"
-                                 src="img/gallery/thumbs/tile8.jpg"
-                                 data-image="img/gallery/big/tile8.jpg"
+                                 src="img/gallery/thumbs/8.jpg"
+                                 data-image="img/gallery/thumbs/8.jpg"
                                  data-description="This is a note"
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Off-Road Motorcycle"
-                                 src="img/gallery/thumbs/tile9.jpg"
-                                 data-image="img/gallery/big/tile9.jpg"
+                                 src="img/gallery/thumbs/9.png"
+                                 data-image="img/gallery/thumbs/9.png"
                                  data-description="This is a motorcycle"
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="Adventure"
-                                 src="img/gallery/thumbs/tile10.jpg"
-                                 data-image="img/gallery/big/tile10.jpg"
+                                 src="img/gallery/thumbs/10.jpg"
+                                 data-image="img/gallery/thumbs/10.jpg"
                                  data-description="River Adventure Camping"
                                  style="display:none">
                         </a>
-
                         <a href="#">
                             <img alt="The winding road"
-                                 src="img/gallery/thumbs/tile1.jpg"
-                                 data-image="img/gallery/big/tile1.jpg"
+                                 src="img/gallery/thumbs/11.jpg"
+                                 data-image="img/gallery/thumbs/11.jpg"
                                  data-description="The winding road description"
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Pancake"
-                                 src="img/gallery/thumbs/tile2.jpg"
-                                 data-image="img/gallery/big/tile2.jpg"
+                                 src="img/gallery/thumbs/12.jpg"
+                                 data-image="img/gallery/thumbs/12.jpg"
                                  data-description="A pancake is a flat cake, often thin and round, prepared from a starch-based batter"
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Foreshore"
-                                 src="img/gallery/thumbs/tile3.jpg"
-                                 data-image="img/gallery/big/tile3.jpg"
+                                 src="img/gallery/thumbs/13.jpg"
+                                 data-image="img/gallery/thumbs/13.jpg"
                                  data-description="The part of a shore between high- and low-water marks, or between the water and cultivated or developed land."
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Yellow Flowers"
-                                 src="img/gallery/thumbs/tile4.jpg"
-                                 data-image="img/gallery/big/tile4.jpg"
+                                 src="img/gallery/thumbs/14.jpg"
+                                 data-image="img/gallery/thumbs/14.jpg"
                                  data-description="Those are yellow flowers"
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Waterfall"
-                                 src="img/gallery/thumbs/tile5.jpg"
-                                 data-image="img/gallery/big/tile5.jpg"
+                                 src="img/gallery/thumbs/15.jpg"
+                                 data-image="img/gallery/thumbs/15.jpg"
                                  data-description="A waterfall is a place where water flows over a vertical drop or a series of steep drops in the course of a stream or river."
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Pumpkin"
-                                 src="img/gallery/thumbs/tile6.jpg"
-                                 data-image="img/gallery/big/tile6.jpg"
+                                 src="img/gallery/thumbs/16.jpg"
+                                 data-image="img/gallery/thumbs/16.jpg"
                                  data-description="A pumpkin is a cultivar of a squash plant, most commonly of Cucurbita pepo, that is round, with smooth, slightly ribbed skin, and deep yellow to orange coloration."
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="In the jungle"
-                                 src="img/gallery/thumbs/tile7.jpg"
-                                 data-image="img/gallery/big/tile7.jpg"
+                                 src="img/gallery/thumbs/17.png"
+                                 data-image="img/gallery/thumbs/17.png"
                                  data-description="This is my car"
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Note"
-                                 src="img/gallery/thumbs/tile8.jpg"
-                                 data-image="img/gallery/big/tile8.jpg"
+                                 src="img/gallery/thumbs/18.jpg"
+                                 data-image="img/gallery/thumbs/18.jpg"
                                  data-description="This is a note"
                                  style="display:none">
                         </a>
 
                         <a href="#">
                             <img alt="Off-Road Motorcycle"
-                                 src="img/gallery/thumbs/tile9.jpg"
-                                 data-image="img/gallery/big/tile9.jpg"
+                                 src="img/gallery/thumbs/19.jpg"
+                                 data-image="img/gallery/thumbs/19.jpg"
                                  data-description="This is a motorcycle"
                                  style="display:none">
                         </a>
+                        <a href="#">
+                            <img alt="Off-Road Motorcycle"
+                                 src="img/gallery/thumbs/19.jpg"
+                                 data-image="img/gallery/thumbs/19.jpg"
+                                 data-description="This is a motorcycle"
+                                 style="display:none">
+                        </a>
+                        <a href="#">
+                            <img alt="Off-Road Motorcycle"
+                                 src="img/gallery/thumbs/20.jpg"
+                                 data-image="img/gallery/thumbs/20.jpg"
+                                 data-description="This is a motorcycle"
+                                 style="display:none">
+                        </a>
+                        <a href="#">
+                            <img alt="Off-Road Motorcycle"
+                                 src="img/gallery/thumbs/21.jpg"
+                                 data-image="img/gallery/thumbs/21.jpg"
+                                 data-description="This is a motorcycle"
+                                 style="display:none">
+                        </a>
+                        <a href="#">
+                            <img alt="Off-Road Motorcycle"
+                                 src="img/gallery/thumbs/22.jpg"
+                                 data-image="img/gallery/thumbs/22.jpg"
+                                 data-description="This is a motorcycle"
+                                 style="display:none">
+                        </a>
+                        <a href="#">
+                            <img alt="Off-Road Motorcycle"
+                                 src="img/gallery/thumbs/23.jpg"
+                                 data-image="img/gallery/thumbs/23.jpg"
+                                 data-description="This is a motorcycle"
+                                 style="display:none">
+                        </a><a href="#">
+                            <img alt="Off-Road Motorcycle"
+                                 src="img/gallery/thumbs/24.jpg"
+                                 data-image="img/gallery/thumbs/24.jpg"
+                                 data-description="This is a motorcycle"
+                                 style="display:none">
+                        </a>
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-body">
+                    <div class="fixed-fluid">
+                        <div class="fixed-sm-250 pull-sm-right fixed-left-border">
+
+
+                            <!-- Tips Widget -->
+                            <!--===================================================-->
+                            <h4>Useful tips</h4>
+                            <p class="text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            <div class="list-group bg-trans">
+                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-purple badge-icon badge-fw pull-left"></span> Lorem ipsum</a>
+                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-info badge-icon badge-fw pull-left"></span> Consectetuer adipiscing</a>
+                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-pink badge-icon badge-fw pull-left"></span> Sed diam nonummy</a>
+                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-success badge-icon badge-fw pull-left"></span> Euismod tincidunt</a>
+                            </div>
+                            <!--===================================================-->
+
+                            <hr class="new-section-md bord-no">
+
+                            <!-- Contact us widget -->
+                            <!--===================================================-->
+                            <h4>Can't find the answer? </h4>
+                            <p class="text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+                            <div class="pad-top">
+                                <a href="#" class="btn btn-primary">Contact us</a>
+                            </div>
+                            <!--===================================================-->
+                        </div>
+
+                        <div class="fluid faq-accordion">
+
+                            <!-- GENERAL -->
+                            <!--===================================================-->
+                            <h4 class="pad-btm bord-btm"><i class="demo-pli-gear icon-fw v-middle"></i> General</h4>
+                            <div id="demo-gen-faq" class="panel-group panel-group-trans panel-group-condensed accordion">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-gen-faq-1" data-parent="#demo-gen-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Lorem ipsum dolor sit amet ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse in" id="demo-gen-faq-1">
+                                        <div class="panel-body">
+                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-gen-faq-2" data-parent="#demo-gen-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Consectetuer adipiscing elit ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-gen-faq-2">
+                                        <div class="panel-body">
+                                            The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-gen-faq-3" data-parent="#demo-gen-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Sed diam nonummy nibh euismod tincidunt ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-gen-faq-3">
+                                        <div class="panel-body">
+                                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- ACCOUNT -->
+                            <!--===================================================-->
+                            <h4 class="pad-btm bord-btm"><i class="demo-pli-male-female icon-fw v-middle"></i> Account</h4>
+                            <div id="demo-acc-faq" class="panel-group panel-group-trans panel-group-condensed accordion">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-acc-faq-1" data-parent="#demo-acc-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Lorem ipsum dolor sit amet ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-acc-faq-1">
+                                        <div class="panel-body">
+                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-acc-faq-2" data-parent="#demo-acc-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Consectetuer adipiscing elit ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-acc-faq-2">
+                                        <div class="panel-body">
+                                            The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-acc-faq-3" data-parent="#demo-acc-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Sed diam nonummy nibh euismod tincidunt ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-acc-faq-3">
+                                        <div class="panel-body">
+                                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- PAYMENT -->
+                            <!--===================================================-->
+                            <h4 class="pad-btm bord-btm v-middl"><i class="demo-pli-coin icon-fw v-middle"></i> Payment</h4>
+                            <div id="demo-pym-faq" class="panel-group panel-group-trans panel-group-condensed accordion">
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-pym-faq-1" data-parent="#demo-pym-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Lorem ipsum dolor sit amet ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-pym-faq-1">
+                                        <div class="panel-body">
+                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-pym-faq-2" data-parent="#demo-pym-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Consectetuer adipiscing elit ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse in" id="demo-pym-faq-2">
+                                        <div class="panel-body">
+                                            The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <p class="panel-title">
+                                            <a href="#demo-pym-faq-3" data-parent="#demo-pym-faq" data-toggle="collapse" class="collapsed">
+                                                <i class="pci-chevron chevron-right"></i> Sed diam nonummy nibh euismod tincidunt ?
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="panel-collapse collapse" id="demo-pym-faq-3">
+                                        <div class="panel-body">
+                                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

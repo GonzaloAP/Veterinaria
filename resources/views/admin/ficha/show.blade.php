@@ -27,7 +27,10 @@
                                     <tr>
                                         <th>ID</th><td>{{ $ficha->id }}</td>
                                     </tr>
-                                    <tr><th> Fecha </th><td> {{ $ficha->fecha }} </td></tr><tr><th> IdEstado </th><td> {{ $ficha->idEstado }} </td></tr><tr><th> IdMascota </th><td> {{ $ficha->idMascota }} </td></tr>
+                                    <tr><th> Fecha </th><td> {{ $ficha->fecha }} </td></tr><tr><th> Estado </th><td> {{ $ficha->idestado }} </td></tr><tr><th> Mascota </th><td> {{ $ficha->idmascota }} </td></tr>
+                                    <tr><th> Informacion del Cliente: </th></tr>
+                                    <tr><th> Nombre</th><td> {{ $ficha->nombreCl }} </td></tr><tr><th> Telefono</th><td> {{ $ficha->telefonoCl }} </td></tr>
+                                    <tr><th> Direccion</th><td> {{ $ficha->direccionCl }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

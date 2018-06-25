@@ -58,7 +58,7 @@ class ClienteController extends Controller
         $this->validate($request, [
 			'nombre' => 'required|max:50',
 			'apellido' => 'required|max:50',
-			'telefono' => 'required|max:10',
+			'telefono' => 'required|max:10|min:7',
 			'direccion' => 'required|max:70',
 			'email' => 'required|max:50'
 		]);
@@ -123,7 +123,7 @@ class ClienteController extends Controller
         $this->validate($request, [
 			'nombre' => 'required|max:50',
 			'apellido' => 'required|max:50',
-			'telefono' => 'required|max:10',
+			'telefono' => 'required|max:10|min:7',
 			'direccion' => 'required|max:70',
 			'email' => 'required|max:50'
 		]);
