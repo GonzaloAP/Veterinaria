@@ -31,7 +31,6 @@
     <!--Demo [ DEMONSTRATION ]-->
     <link href="{{asset('css/demo/nifty-demo.min.css')}}" rel="stylesheet">
 </head>
-
 <body>
 <div id="container" class="effect aside-float aside-bright mainnav-lg">
 
@@ -509,12 +508,11 @@
                             <!--================================-->
                             <!--End shortcut buttons-->
 
-
-                            <ul id="mainnav-menu" class="list-group">
-
+                             @if(Auth::User()->tipo == 'administrador')
+                             <!--Menu del Administrador (Inicio)-->
+                             <ul id="mainnav-menu" class="list-group">
                                 <!--Category name-->
                                 <li class="list-header">Menu</li>
-
                                 <!--Menu list item-->
                                 <li class="active-sub">
                                     <a href="#">
@@ -532,7 +530,6 @@
 
                                     </ul>
                                 </li>
-
                                 <li >
                                     <a href="#">
                                         <i class="demo-pli-male-female"></i>
@@ -549,7 +546,6 @@
 
                                     </ul>
                                 </li>
-
                                 <li>
                                     <a href="#">
                                         <i class="demo-pli-photo-2"></i>
@@ -566,21 +562,84 @@
 
                                     </ul>
                                 </li>
-
                                 <li>
-                                    <a href="#">
-                                        <i class="demo-pli-gear"></i>
-                                        <span class="menu-title">Herramientas</span>
-                                        <i class="arrow"></i>
-                                    </a>
+                                     <a href="#">
+                                         <i class="demo-pli-gear"></i>
+                                         <span class="menu-title">Herramientas</span>
+                                         <i class="arrow"></i>
+                                     </a>
 
-                                    <!--Submenu-->
-                                    <ul class="collapse">
-                                        <li><a href="#"><i class="demo-pli-file-excel"></i>Reportes</a></li>
-                                        <li><a href="#"><i class="demo-pli-file-csv"></i>Bitacora</a></li>
-                                        <li><a href="#"><i class="demo-pli-file-html"></i>Estadistica</a></li>
-                                    </ul>
-                                </li>
+                                     <!--Submenu-->
+                                     <ul class="collapse">
+                                         <li><a href="#"><i class="demo-pli-file-excel"></i>Reportes</a></li>
+                                         <li><a href="#"><i class="demo-pli-file-csv"></i>Bitacora</a></li>
+                                         <li><a href="#"><i class="demo-pli-file-html"></i>Estadistica</a></li>
+                                     </ul>
+                                 </li>
+                            </ul>
+                            <!--Menu del Administrador (Fin)-->
+                             @else
+                                <ul id="mainnav-menu" class="list-group">
+                                    <!--Category name-->
+                                    <li class="list-header">Menu</li>
+                                    <!--Menu del Cliente (Inicio)-->
+                                    @if(Auth::User()->tipo == 'cliente')
+                                    <li class="active-sub">
+                                        <a href="#">
+                                            <i class="demo-pli-home"></i>
+                                            <span class="menu-title">Administracion</span>
+                                            <i class="arrow"></i>
+                                        </a>
+
+                                        <!--Submenu-->
+                                        <ul class="collapse in">
+                                            <li><a href="{{ url('/admin/personal') }}"> <i class="demo-pli-find-user"></i>Personal</a></li>
+                                            <li><a href="{{ url('/admin/promocion') }}"><i class="demo-pli-file-text-image"></i>Promocion</a></li>
+                                            <li><a href="{{ url('/admin/servicio') }}"><i class="demo-pli-medal-2"></i>Servicio</a></li>
+                                            <li><a href="{{ url('/admin/estado') }}"><i class="demo-pli-support"></i>Estado</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <!--Menu del Cliente (Fin)-->
+                                    @else
+                                    <!--Menu del Personal (Inicio)-->
+                                    <li class="active-sub">
+                                        <a href="#">
+                                            <i class="demo-pli-male-female"></i>
+                                            <span class="menu-title">Atencion a Cliente</span>
+                                            <i class="arrow"></i>
+                                        </a>
+
+                                        <!--Submenu-->
+                                        <ul class="collapse">
+                                            <li><a href="{{ url('/admin/cliente') }}"><i class="demo-pli-checked-user"></i>Cliente</a></li>
+                                            <li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-file-edit"></i>Ficha de Atencion</a></li>
+                                            <li><a href="{{ url('/admin/detalle') }}"><i class="demo-pli-check"></i>Detalle</a></li>
+                                            <li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-paperclip"></i>Reserva</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="demo-pli-photo-2"></i>
+                                            <span class="menu-title">Mascota</span>
+                                            <i class="arrow"></i>
+                                        </a>
+
+                                        <!--Submenu-->
+                                        <ul class="collapse">
+                                            <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-photos"></i>Mascota</a></li>
+                                            <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-repair"></i>Tratamiento</a></li>
+                                            <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-file-search"></i>Seguimiento</a></li>
+                                            <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-file-jpg"></i>Historia Clinica</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <!--Menu del Personal (Fin)-->
+                                    @endif
+                                </ul>
+                             @endif
+
                         </div>
                     </div>
                 </div>

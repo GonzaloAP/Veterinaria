@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Personal;
+use App\User;
 use Illuminate\Http\Request;
 
 class PersonalController extends Controller
@@ -58,6 +59,8 @@ class PersonalController extends Controller
 			'ci' => 'required|max:10',
 			'telefono' => 'required|max:10'
 		]);
+        //return json_encode(array($request->email));
+
         Personal::create([
             'nombre' =>$request->nombre,
             'apellido' =>$request->apellido,
@@ -66,7 +69,16 @@ class PersonalController extends Controller
             'estado'=>true,
         ]);
 
+        User::create([
+            'nick' =>$request->nombre,
+            'email' =>$request->email,
+            'password' =>bcrypt($request->telefono),
+            'tipo' =>'personal',
+            'estado' => TRUE,
+        ]);
+
         return redirect('admin/personal')->with('flash_message', 'Personal added!');
+
     }
 
     /**

@@ -1,40 +1,38 @@
 @extends('home')
 
 @section('contenido')
-    <div class="container">
+
         <div class="row">
+            <div class="col-md-11">
+                <div class="panel">
+                    <div class="panel-heading">
+                        </br>
+                        <h3 class="panel-title" style="font-size:20px;text-align:center">Estado# {{ $estado->id }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table id="demo-custom-toolbar" class="demo-add-niftycheck" data-toggle="table"
+                               data-url="data/bs-table.json"
+                               data-toolbar="#demo-delete-row"
+                               data-search="true"
+                               data-show-refresh="true"
+                               data-show-toggle="true"
+                               data-show-columns="true"
+                               data-sort-name="id"
+                               data-page-list="[5, 10, 20]"
+                               data-page-size="5"
+                               data-pagination="true" data-show-pagination-switch="true">
+                            <a href="{{ url('/admin/estado') }}" title="Volver Atras"><button class="btn  btn-sm" style="background-color: #edde34"><i class="demo-pli-arrow-left" aria-hidden="true"></i> Atras</button></a>
 
-
-            <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Estado {{ $estado->id }}</div>
-                    <div class="card-body">
-
-                        <a href="{{ url('/admin/estado') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/admin/estado/' . $estado->id . '/edit') }}" title="Edit Estado"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                        <form method="POST" action="{{ url('admin/estado' . '/' . $estado->id) }}" accept-charset="UTF-8" style="display:inline">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Estado" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                        </form>
-                        <br/>
-                        <br/>
-
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <th>ID</th><td>{{ $estado->id }}</td>
-                                    </tr>
-                                    <tr><th> Descripcion </th><td> {{ $estado->descripcion }} </td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
+                            <br/>
+                            <br/>
+                            <tbody>
+                            <tr>
+                                <th>ID</th><td>{{ $estado->id }}</td>
+                            </tr>
+                            <tr><th> Descripcion </th><td> {{ $estado->descripcion }} </td></tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection

@@ -1,6 +1,55 @@
 @extends('layouts.app')
 
 @section('content')
+
+       <div class="cls-content col-md-4 col-lg-offset-4">
+           <div class="panel panel-default">
+            <div class="cls-content-sm panel">
+
+                <div class="panel-body">
+                    <div class="mar-ver pad-btm">
+                        <h1 class="h3">Login</h1>
+                        <p>Inicia Sesion en tu cuenta</p>
+                    </div>
+                    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <input id="email" type="email" class="form-control" name="email" value="{{old('email')}}" placeholder="Correo Electronico" required autofocus>
+                            @if ($errors->has('email'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <input id="password" type="password" class="form-control" name="password" placeholder="Clave" required>
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+
+                        <div class="checkbox pad-btm text-left">
+                            <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox">
+                            <label for="demo-form-checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>Recordarme</label>
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Iniciar</button>
+                    </form>
+                </div>
+
+                <div class="pad-all">
+                    <a href="#" class="btn-link mar-rgt">Olvido su clave ?</a>
+
+                </div>
+            </div>
+           </div>
+        </div>
+
+
+{{--
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -66,4 +115,7 @@
         </div>
     </div>
 </div>
+--}}
+
+
 @endsection

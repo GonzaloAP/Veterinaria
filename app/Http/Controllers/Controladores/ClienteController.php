@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Cliente;
+use App\User;
 use Illuminate\Http\Request;
 
 class ClienteController extends Controller
@@ -69,6 +70,13 @@ class ClienteController extends Controller
             'email' => $request->email,
             'estado'=>true,
 
+        ]);
+        User::create([
+            'nick' =>$request->nombre,
+            'email' =>$request->email,
+            'password' =>bcrypt($request->telefono),
+            'tipo' =>'cliente',
+            'estado' => TRUE,
         ]);
 
         return redirect('admin/cliente')->with('flash_message', 'Cliente added!');

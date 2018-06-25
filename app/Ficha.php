@@ -34,7 +34,7 @@ class Ficha extends Model
     {
     $ficha =
         $query
-            ->select('id','fecha','idEstado','idMascota')
+            ->select('id','fecha','idestado','idmascota')
             ->where('estado',true)
             ->orderBy('id','desc');
     return $ficha;

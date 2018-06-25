@@ -61,7 +61,7 @@ class FichaController extends Controller
             'estado'=>true,
         ]);
 
-        return redirect('admin/ficha')->with('flash_message', 'Ficha added!');
+        return redirect('admin/detalle/create')->with('flash_message', 'Ficha added!');
     }
 
     /**

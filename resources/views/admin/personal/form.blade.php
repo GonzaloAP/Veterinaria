@@ -16,11 +16,19 @@
         <input class="form-control" name="ci" type="number" id="ci" value="{{ $personal->ci or ''}}" required>
         {!! $errors->first('ci', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('telefono') ? 'has-error' : ''}}">
+</div>
+<div class="form-group {{ $errors->has('telefono') ? 'has-error' : ''}}">
     <label for="telefono" class="col-md-4 control-label">{{ 'Telefono' }}</label>
     <div class="col-md-6">
         <input class="form-control" name="telefono" type="number" id="telefono" value="{{ $personal->telefono or ''}}" required>
         {!! $errors->first('telefono', '<p class="help-block">:message</p>') !!}
+    </div>
+</div>
+<div class="form-group {{ $errors->has('email') ? 'has-error' : ''}}">
+    <label for="email" class="col-md-3 control-label">{{ 'Email' }}</label>
+    <div class="col-md-8">
+        <input class="form-control" name="email" type="text" id="email" required>
+        {!! $errors->first('email', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 
