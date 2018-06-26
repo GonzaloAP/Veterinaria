@@ -66,7 +66,7 @@
     <div class="panel">
         <div class="panel-heading">
             </br>
-            <h3 class="panel-title" style="font-size:20px;text-align:center">Ficha de Atencion</h3>
+            <h3 class="panel-title" style="font-size:20px;text-align:center">Fichas de Atencion</h3>
         </div>
         <div class="panel-body">
             <a href="{{ url('/admin/ficha/create') }}" class="btn btn-success" title="Nueva Ficha">
@@ -85,7 +85,7 @@
                    data-pagination="true" data-show-pagination-switch="true">
                 <thead>
                 <tr>
-                    <th data-field="id" data-sortable="true">#</th>
+                    <th data-field="idF" data-sortable="true">#</th>
                     <th data-field="fecha" data-sortable="true">Fecha</th>
                     <th data-field="estado" data-sortable="true">Estado</th>
                     <th data-field="mascota">Mascota</th>
@@ -95,18 +95,21 @@
                 <tbody>
                 @foreach($ficha as $item)
                     <tr>
-                        <td data-field="id">{{ $loop->iteration or $item->id }}</td>
-                        <td data-field="fecha">{{ $item->fecha }}</td>
-                        <td data-field="estado">{{ $item->idestado }}</td>
-                        <td data-field="mascota">{{ $item->idmascota }}</td>
+                        <td data-field="idF" >{{ $loop->iteration or $item->idF }}</td>
+                        <td data-field="fecha">{{ $item->fechaF }}</td>
+                        <td data-field="estado">{{ $item->estado }}</td>
+                        <td data-field="mascota">{{ $item->mascota }}</td>
                         <td data-field="acciones">
-                            <a href="{{ url('/admin/ficha/' . $item->id) }}" title="Ver Ficha"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver Detalle</button></a>
-                            <a href="{{ url('/admin/ficha/' . $item->id . '/edit') }}" title="Editar Ficha"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
+                            <a href="{{ url('/admin/ficha/' . $item->idF) }}" title="Ver Ficha"><button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Ver Ficha</button></a>
 
-                            <form method="POST" action="{{ url('/admin/ficha' . '/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                            <a href="{{ url('/admin/fichaD/' . $item->idF) }}" title="Detalle de Ficha"><button class="btn btn-success btn-sm"><i class="fa fa-eye" aria-hidden="true"></i> Detalle de Ficha</button></a>
+
+                            <a href="{{ url('/admin/ficha/' . $item->idF . '/edit') }}" title="Editar Ficha"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</button></a>
+
+                            <form method="POST" action="{{ url('/admin/ficha' . '/' . $item->idF) }}" accept-charset="UTF-8" style="display:inline">
                                 {{ method_field('DELETE') }}
                                 {{ csrf_field() }}
-                                <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Ficha" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
+                                <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Ficha" onclick="return confirm(&quot;Esta seguro de  realizar esta acccion ?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Eliminar</button>
                             </form>
                         </td>
                     </tr>

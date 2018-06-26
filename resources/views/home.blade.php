@@ -540,7 +540,7 @@
                                         <li><a href="{{ url('/admin/cliente') }}"><i class="demo-pli-checked-user"></i>Cliente</a></li>
                                         <li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-file-edit"></i>Ficha de Atencion</a></li>
                                         <li><a href="{{ url('/admin/detalle') }}"><i class="demo-pli-check"></i>Detalle</a></li>
-                                        <li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-paperclip"></i>Reserva</a></li>
+                                        {{--<li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-paperclip"></i>Reserva</a></li>--}}
 
                                     </ul>
                                 </li>
@@ -555,7 +555,7 @@
                                     <ul class="collapse">
                                         <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-photos"></i>Mascota</a></li>
                                         <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-repair"></i>Tratamiento</a></li>
-                                        <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-file-search"></i>Seguimiento</a></li>
+                                        {{--<li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-file-search"></i>Seguimiento</a></li>--}}
                                         <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-file-jpg"></i>Historia Clinica</a></li>
 
                                     </ul>
@@ -612,9 +612,6 @@
                                         <ul class="collapse">
                                             <li><a href="{{ url('/admin/cliente') }}"><i class="demo-pli-checked-user"></i>Cliente</a></li>
                                             <li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-file-edit"></i>Ficha de Atencion</a></li>
-                                            <li><a href="{{ url('/admin/detalle') }}"><i class="demo-pli-check"></i>Detalle</a></li>
-                                            <li><a href="{{ url('/admin/ficha') }}"><i class="demo-pli-paperclip"></i>Reserva</a></li>
-
                                         </ul>
                                     </li>
                                     <li>
@@ -628,7 +625,6 @@
                                         <ul class="collapse">
                                             <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-photos"></i>Mascota</a></li>
                                             <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-repair"></i>Tratamiento</a></li>
-                                            <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-file-search"></i>Seguimiento</a></li>
                                             <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-file-jpg"></i>Historia Clinica</a></li>
 
                                         </ul>
@@ -725,6 +721,8 @@
 <script src="{{asset('js/demo/dashboard.js')}}"></script>
 <!--Custom Table-->
 <script src="{{asset('plugins/bootstrap-table/bootstrap-table.min.js')}}"></script>
+
+@stack('scripts');
 
 </body>
 </html>

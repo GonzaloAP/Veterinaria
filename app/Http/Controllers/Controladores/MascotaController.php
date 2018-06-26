@@ -124,7 +124,7 @@ class MascotaController extends Controller
 			'sexo' => 'required',
 			'edad' => 'required'
 		]);
-        $requestData = $request->all();
+       // $requestData = $request->all();
         
         $mascotum = Mascotum::findOrFail($id);
 

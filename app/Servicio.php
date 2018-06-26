@@ -27,14 +27,14 @@ class Servicio extends Model
      *
      * @var array
      */
-    protected $fillable = ['descripcion', 'precio', 'precioTotal', 'idPersonal','estado'];
+    protected $fillable = ['descripcion', 'precio', 'preciototal', 'idpersonal','estado'];
 
     /*Funciones*/
     public function scope_getServicios($query)
     {
     $servicio =
         $query
-            ->select('id','descripcion','precio','precioTotal','idPersonal')
+            ->select('id','descripcion','precio','preciototal','idpersonal')
             ->where('estado',true)
             ->orderBy('id','desc');
     return $servicio;

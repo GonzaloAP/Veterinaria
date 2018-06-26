@@ -31,18 +31,20 @@ class Ficha extends Model
     protected $fillable = ['fecha', 'idestado', 'idmascota','estado'];
 
     /*Funciones*/
+    /*Muestra todas las fichas con estado habilitado*/
     public function scope_getFichas($query)
     {
     $ficha =
         $query
             ->join('estado as e','e.id','idestado')
             ->join('mascota as m','m.id','idmascota')
-            ->select('fichaatencion.id','fichaatencion.fecha','e.descripcion as idestado','m.nombre as idmascota')
+            ->select('fichaatencion.id as idF','fichaatencion.fecha as fechaF','e.descripcion as estado','m.nombre as mascota')
             ->where('fichaatencion.estado',true)
             ->orderBy('fichaatencion.id','desc');
     return $ficha;
     }
 
+    /*Muestra Informacion sobre la ficha con informacion del cliente*/
     public function scope_getFichaDetalle($query,$id)
     {
         $ficha =
@@ -55,6 +57,7 @@ class Ficha extends Model
                 ->where('fichaatencion.id',$id);
         return $ficha;
     }
+
 
 
 

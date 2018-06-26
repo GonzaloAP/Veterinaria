@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Detalle;
+use App\Servicio;
 use Illuminate\Http\Request;
 use DB;
 
@@ -39,7 +40,10 @@ class DetalleController extends Controller
      */
     public function create()
     {
-        return view('admin.detalle.create');
+        $fichaId= DB::table('fichaatencion')->max('id');
+        $servicios = Servicio::_getServicios()->get();
+        //return json_encode(array('gh'=>$servicios));
+        return view('admin.detalle.create', compact('fichaId','servicios'));
     }
 
     /**
@@ -51,15 +55,19 @@ class DetalleController extends Controller
      */
     public function store(Request $request)
     {
-        
-        Detalle::create([
-            'idFicha' => $request->idFicha,
-            'idServicio' => $request->idServicio,
-            'estado'=>true,
+        $idServicio = $request->get('idS');
 
-        ]);
-
-        return redirect('admin/detalle')->with('flash_message', 'Detalle added!');
+        $cont = 0;
+        //return json_encode(array('df'=> $request->get('fichaId')));
+        while ($cont < count($idServicio)) {
+            $Detalle = new Detalle();
+            $Detalle->idficha=$request->get('fichaId');
+            $Detalle->idservicio=$idServicio[$cont];
+            $Detalle->estado=true;
+            $Detalle -> save();
+            $cont = $cont + 1;
+        }
+        return redirect('admin/ficha');
     }
 
     /**
@@ -85,9 +93,12 @@ class DetalleController extends Controller
      */
     public function edit($id)
     {
-        $detalle = Detalle::findOrFail($id);
 
-        return view('admin.detalle.edit', compact('detalle'));
+        $detalle = Detalle::findOrFail($id);
+        $servicio = Servicio::_getServicios()->get();
+        //$detalle = Detalle::_getDetalle($id)->get()->first();
+
+        return view('admin.detalle.edit', compact('detalle','servicio'));
     }
 
     /**
@@ -100,13 +111,16 @@ class DetalleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        $requestData = $request->all();
-        
-        $detalle = Detalle::findOrFail($id);
-        $detalle->update($requestData);
 
-        return redirect('admin/detalle')->with('flash_message', 'Detalle updated!');
+        $detalle = Detalle::findOrFail($id);
+        //$detalle->update($requestData);
+
+
+        $detalle->idficha = $request->get('idficha');
+        $detalle->idservicio = $request->get('idservicio');
+        $detalle->update();
+
+        return redirect('admin/ficha')->with('flash_message', 'Detalle updated!');
     }
 
     /**
@@ -116,10 +130,13 @@ class DetalleController extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($idFicha)
+    public function destroy($id)
     {
-       
+        $detalle = Detalle::findOrFail($id);
+
+        $detalle->estado = false;
+        $detalle->save();
         
-        return redirect('admin/detalle')->with('flash_message', 'Detalle eliminado!');
+        return redirect('admin/ficha')->with('flash_message', 'Detalle eliminado!');
     }
 }

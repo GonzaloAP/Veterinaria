@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Controladores;
 
+use App\Detalle;
 use App\Estado;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -94,8 +95,9 @@ class FichaController extends Controller
     public function edit($id)
     {
         $ficha = Ficha::findOrFail($id);
-
-        return view('admin.ficha.edit', compact('ficha'));
+        $estado = Estado::_getEstados()->get();
+        $mascota = Mascotum::_getMascotas()->get();
+        return view('admin.ficha.edit', compact('ficha','estado','mascota'));
     }
 
     /**
@@ -111,11 +113,13 @@ class FichaController extends Controller
         $this->validate($request, [
 			'fecha' => 'required'
 		]);
-        $requestData = $request->all();
-        
-        $ficha = Ficha::findOrFail($id);
-        $ficha->update($requestData);
 
+        $ficha = Ficha::findOrFail($id);
+        $ficha->fecha = $request->get('fecha');
+        $ficha->idestado = $request->get('estado');
+        $ficha->idmascota = $request->get('mascota');
+        $ficha->update();
+        //return json_encode(array('sd'=>$requestData));
         return redirect('admin/ficha')->with('flash_message', 'Ficha updated!');
     }
 
@@ -134,5 +138,12 @@ class FichaController extends Controller
         $ficha->save();
 
         return redirect('admin/ficha')->with('flash_message', 'Ficha deleted!');
+    }
+
+    public function detalle($idF)
+    {
+     $fichaD = Detalle::_getFichaDetalleServicios($idF)->get();
+     //return json_encode(array('gh'=>$fichaD));
+     return view('admin.ficha.detalle', compact('fichaD'));
     }
 }
