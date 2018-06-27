@@ -3,15 +3,19 @@
 @section('contenido')
     <div class="container">
         <div class="row">
-
-
             <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Create New Personal</div>
-                    <div class="card-body">
-                        <a href="{{ url('/admin/personal') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+                <div class="panel">
+                    <div class="panel-heading"></br>
+                        <h3 class="panel-title" style="font-size:20px;text-align:center">Agregar Personal</h3>
+                    </div>
+                    <div class="panel-body">
+                        <a href="{{ url('/admin/personal') }}" title="Back">
+                            <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                Back
+                            </button>
+                        </a>
+                        <br/>
+                        <br/>
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
@@ -21,7 +25,8 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/personal') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/personal') }}" accept-charset="UTF-8"
+                              class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             @include ('admin.personal.form')

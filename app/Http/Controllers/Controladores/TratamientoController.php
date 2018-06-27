@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Controladores;
 
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests;
 use App\Tratamiento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TratamientoController extends Controller
 {
@@ -40,7 +40,14 @@ class TratamientoController extends Controller
      */
     public function create()
     {
-        return view('admin.tratamiento.create');
+        $detalles = DB::table('servicio as serv')
+            ->join('detalle as det', 'det.idservicio', 'serv.id')
+            ->where('det.estado', '=', 1)
+            ->select('det.*', 'serv.descripcion as servicio')
+            ->get();
+        //return $detalles;
+        //return json_encode(array('sd'=>$detalles));
+         return view('admin.tratamiento.create', ["detalles" => $detalles]);
     }
 
     /**
@@ -53,15 +60,16 @@ class TratamientoController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-			'descripcion' => 'required|max:30',
-			'fechar' => 'required',
-			'plazo' => 'required'
-		]);
+            'descripcion' => 'required|max:30',
+            'fechar' => 'required',
+            'plazo' => 'required'
+        ]);
         Tratamiento::create([
-            'descripcion' =>$request->descripcion,
-            'fechar' =>$request->fechar,
-            'plazo' =>$request->plazo,            
-            'estado'=>true,
+            'descripcion' => $request->descripcion,
+            'fechar' => $request->fechar,
+            'plazo' => $request->plazo,
+            'iddetalle' => $request->iddetalle,
+            'estado' => true,
         ]);
 
         return redirect('admin/tratamiento')->with('flash_message', 'Tratamiento added!');
@@ -70,48 +78,52 @@ class TratamientoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\View\View
      */
     public function show($id)
     {
         $tratamiento = Tratamiento::findOrFail($id);
-
         return view('admin.tratamiento.show', compact('tratamiento'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\View\View
      */
     public function edit($id)
     {
+        $detalles = DB::table('servicio as serv')
+            ->join('detalle as det', 'det.idservicio', 'serv.id')
+            ->where('det.estado', '=', 1)
+            ->select('det.*', 'serv.descripcion as servicio')
+            ->get();
         $tratamiento = Tratamiento::findOrFail($id);
 
-        return view('admin.tratamiento.edit', compact('tratamiento'));
+        return view('admin.tratamiento.edit', ["detalles" => $detalles, "tratamiento" => $tratamiento]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-			'descripcion' => 'required|max:30',
-			'fechar' => 'required',
-			'plazo' => 'required'
-		]);
+            'descripcion' => 'required|max:30',
+            'fechar' => 'required',
+            'plazo' => 'required'
+        ]);
         $requestData = $request->all();
-        
+
         $tratamiento = Tratamiento::findOrFail($id);
         $tratamiento->update($requestData);
 
@@ -121,7 +133,7 @@ class TratamientoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */

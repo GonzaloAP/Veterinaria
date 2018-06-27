@@ -1,20 +1,28 @@
 <div class="form-group {{ $errors->has('descripcion') ? 'has-error' : ''}}">
     <label for="descripcion" class="col-md-4 control-label">{{ 'Descripcion' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="descripcion" type="text" id="descripcion" value="{{ $promocion->descripcion or ''}}" required>
+        <input class="form-control" name="descripcion" type="text" id="descripcion"
+               value="{{ $promocion->descripcion or ''}}" required>
         {!! $errors->first('descripcion', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('descuento') ? 'has-error' : ''}}">
+</div>
+<div class="form-group {{ $errors->has('descuento') ? 'has-error' : ''}}">
     <label for="descuento" class="col-md-4 control-label">{{ 'Descuento' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="descuento" type="number" id="descuento" value="{{ $promocion->descuento or ''}}" required>
+        <input class="form-control" name="descuento" type="number" id="descuento" step="any"
+               value="{{ $promocion->descuento or ''}}" required>
         {!! $errors->first('descuento', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('idServicio') ? 'has-error' : ''}}">
-    <label for="idServicio" class="col-md-4 control-label">{{ 'Idservicio' }}</label>
+</div>
+<div class="form-group {{ $errors->has('idservicio') ? 'has-error' : ''}}">
+    <label for="idservicio" class="col-md-4 control-label">idservicio</label>
     <div class="col-md-6">
-        <input class="form-control" name="idServicio" type="number" id="idServicio" value="{{ $promocion->idServicio or ''}}" >
-        {!! $errors->first('idServicio', '<p class="help-block">:message</p>') !!}
+        <select name="idservicio" class="form-control">
+            @foreach($servicios as $item)
+                <option value="{{$item->id}}">{{$item->descripcion}}</option>
+            @endforeach
+        </select>
+        {!! $errors->first('idservicio', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

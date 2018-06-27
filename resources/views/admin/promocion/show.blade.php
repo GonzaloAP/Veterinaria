@@ -3,12 +3,10 @@
 @section('contenido')
     <div class="container">
         <div class="row">
-
-
             <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Promocion {{ $promocion->id }}</div>
-                    <div class="card-body">
+                <div class="panel">
+                    <div class="panel-heading"><h3 class="panel-title" style="font-size: 20px" align="center">Promocion {{ $promocion->id }}</h3></div>
+                    <div class="panel-body">
 
                         <a href="{{ url('/admin/promocion') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <a href="{{ url('/admin/promocion/' . $promocion->id . '/edit') }}" title="Edit Promocion"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
@@ -27,7 +25,7 @@
                                     <tr>
                                         <th>ID</th><td>{{ $promocion->id }}</td>
                                     </tr>
-                                    <tr><th> Descripcion </th><td> {{ $promocion->descripcion }} </td></tr><tr><th> Descuento </th><td> {{ $promocion->descuento }} </td></tr><tr><th> IdServicio </th><td> {{ $promocion->idServicio }} </td></tr>
+                                    <tr><th> Descripcion </th><td> {{ $promocion->descripcion }} </td></tr><tr><th> Descuento </th><td> {{ $promocion->descuento }} </td></tr><tr><th> idservicio </th><td> {{ $promocion->idservicio }} </td></tr>
                                 </tbody>
                             </table>
                         </div>

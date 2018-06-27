@@ -19,7 +19,11 @@
 </div><div class="form-group {{ $errors->has('iddetalle') ? 'has-error' : ''}}">
     <label for="iddetalle" class="col-md-4 control-label">{{ 'Iddetalle' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="iddetalle" type="number" id="iddetalle" value="{{ $tratamiento->iddetalle or ''}}" >
+        <select name="iddetalle" class="form-control">
+            @foreach($detalles as $item)
+                <option value="{{$item->id}}">{{'Ficha:'.$item->idficha.'   Servicio:'.$item->servicio}}</option>
+            @endforeach
+        </select>
         {!! $errors->first('iddetalle', '<p class="help-block">:message</p>') !!}
     </div>
 </div>

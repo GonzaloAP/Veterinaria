@@ -26,14 +26,14 @@ class Promocion extends Model
      *
      * @var array
      */
-    protected $fillable = ['descripcion', 'descuento', 'idServicio','estado'];
+    protected $fillable = ['descripcion', 'descuento', 'idservicio','estado'];
 
     /*Funciones*/
     public function scope_getPromocion($query)
     {
     $promocion =
         $query
-            ->select('id','descripcion','descuento','idServicio')
+            ->select('id','descripcion','descuento','idservicio')
             ->where('estado',true)
             ->orderBy('id','desc');
     return $promocion;

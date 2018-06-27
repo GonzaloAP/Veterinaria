@@ -26,7 +26,7 @@ class Personal extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'apellido', 'ci', 'telefono','estado'];
+    protected $fillable = ['nombre', 'apellido', 'ci', 'telefono','email','estado'];
 
       /*Funciones*/
       public function scope_getPersonal($query)

@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Controladores;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Personal;
 use App\Servicio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ServicioController extends Controller
 {
@@ -23,8 +25,8 @@ class ServicioController extends Controller
         if (!empty($keyword)) {
             $servicio = Servicio::where('descripcion', 'LIKE', "%$keyword%")
                 ->orWhere('precio', 'LIKE', "%$keyword%")
-                ->orWhere('precioTotal', 'LIKE', "%$keyword%")
-                ->orWhere('idPersonal', 'LIKE', "%$keyword%")
+                ->orWhere('preciototal', 'LIKE', "%$keyword%")
+                ->orWhere('idpersonal', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
             $servicio = Servicio::_getServicios()->paginate($perPage);
@@ -40,7 +42,9 @@ class ServicioController extends Controller
      */
     public function create()
     {
-        return view('admin.servicio.create');
+        $personals=Personal::all();
+        //return $personals;
+        return view('admin.servicio.create',["personals"=>$personals]);
     }
 
     /**
@@ -55,13 +59,15 @@ class ServicioController extends Controller
         $this->validate($request, [
 			'descripcion' => 'required',
 			'precio' => 'required',
-			'precioTotal' => 'required'
+			'preciototal' => 'required'
 		]);
+
+        //dd($request);
         Servicio::create([
             'descripcion' =>$request->descripcion,
             'precio' =>$request->precio,
-            'precioTotal' =>$request->precioTotal,    
-            'idPersonal' =>$request->idPersonal,
+            'preciototal' =>$request->preciototal,
+            'idpersonal' =>$request->idpersonal,
             'estado'=>true,
         ]);
         return redirect('admin/servicio')->with('flash_message', 'Servicio added!');
@@ -90,9 +96,10 @@ class ServicioController extends Controller
      */
     public function edit($id)
     {
+        $personals=Personal::all();
         $servicio = Servicio::findOrFail($id);
-
-        return view('admin.servicio.edit', compact('servicio'));
+        //dd($servicio);
+        return view('admin.servicio.edit',["servicio"=>$servicio,"personals"=>$personals]);
     }
 
     /**
@@ -108,7 +115,7 @@ class ServicioController extends Controller
         $this->validate($request, [
 			'descripcion' => 'required',
 			'precio' => 'required',
-			'precioTotal' => 'required'
+			'preciototal' => 'required'
 		]);
         $requestData = $request->all();
         

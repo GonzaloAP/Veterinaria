@@ -1,30 +1,40 @@
 <div class="form-group {{ $errors->has('descripcion') ? 'has-error' : ''}}">
     <label for="descripcion" class="col-md-4 control-label">{{ 'Descripcion' }}</label>
     <div class="col-md-6">
-        <select name="descripcion" class="form-control" id="descripcion" required>
-    @foreach (json_decode('{"Consulta":"Consulta","Vacuna":"Vacuna","Desparacitacion":"Desparacitacion","Peluqueria":"Peluqueria","Cirugia":"Cirugia"}', true) as $optionKey => $optionValue)
-        <option value="{{ $optionKey }}" {{ (isset($servicio->descripcion) && $servicio->descripcion == $optionKey) ? 'selected' : ''}}>{{ $optionValue }}</option>
-    @endforeach
-</select>
+
+        <div class="col-md-6">
+            <input class="form-control" name="descripcion" type="text" id="precio"
+                   value="{{ $servicio->descripcion or ''}}" required>
+            {!! $errors->first('descripcion', '<p class="help-block">:message</p>') !!}
+        </div>
         {!! $errors->first('descripcion', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('precio') ? 'has-error' : ''}}">
+</div>
+<div class="form-group {{ $errors->has('precio') ? 'has-error' : ''}}">
     <label for="precio" class="col-md-4 control-label">{{ 'Precio' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="precio" type="number" id="precio" value="{{ $servicio->precio or ''}}" required>
+        <input class="form-control" name="precio" type="number" id="precio" value="{{ $servicio->precio or ''}}"
+               required>
         {!! $errors->first('precio', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('precioTotal') ? 'has-error' : ''}}">
-    <label for="precioTotal" class="col-md-4 control-label">{{ 'Preciototal' }}</label>
+</div>
+<div class="form-group {{ $errors->has('preciototal') ? 'has-error' : ''}}">
+    <label for="preciototal" class="col-md-4 control-label">{{ 'Preciototal' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="precioTotal" type="number" id="precioTotal" value="{{ $servicio->precioTotal or ''}}" required>
-        {!! $errors->first('precioTotal', '<p class="help-block">:message</p>') !!}
+        <input class="form-control" name="preciototal" type="number" id="preciototal"
+               value="{{ $servicio->preciototal or ''}}" required>
+        {!! $errors->first('preciototal', '<p class="help-block">:message</p>') !!}
     </div>
-</div><div class="form-group {{ $errors->has('idPersonal') ? 'has-error' : ''}}">
-    <label for="idPersonal" class="col-md-4 control-label">{{ 'Idpersonal' }}</label>
+</div>
+<div class="form-group {{ $errors->has('idpersonal') ? 'has-error' : ''}}">
+    <label for="idpersonal" class="col-md-4 control-label">{{ 'idpersonal' }}</label>
     <div class="col-md-6">
-        <input class="form-control" name="idPersonal" type="number" id="idPersonal" value="{{ $servicio->idPersonal or ''}}" >
-        {!! $errors->first('idPersonal', '<p class="help-block">:message</p>') !!}
+        <select name="idpersonal" class="form-control" id="idpersonal" required>
+            @foreach ($personals as $item)
+                <option value="{{ $item->id }}">{{$item->nombre.' '.$item->apellido}}</option>
+            @endforeach
+        </select>
+        {!! $errors->first('idpersonal', '<p class="help-block">:message</p>') !!}
     </div>
 </div>
 

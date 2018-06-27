@@ -6,10 +6,9 @@
 
 
             <div class="col-md-9">
-                <div class="card">
-                    <div class="card-header">Servicio {{ $servicio->id }}</div>
-                    <div class="card-body">
-
+                <div class="panel">
+                    <div class="panel-heading"><h3 class="panel-title" align="center" style="font-size: 20px">Servicio {{ $servicio->id }}</h3></div>
+                    <div class="panel-body">
                         <a href="{{ url('/admin/servicio') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
                         <a href="{{ url('/admin/servicio/' . $servicio->id . '/edit') }}" title="Edit Servicio"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
 
