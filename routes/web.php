@@ -20,3 +20,6 @@ Route::resource('admin/detalle', 'Controladores\\DetalleController');
 Route::resource('admin/tratamiento', 'Controladores\\TratamientoController');
 
 Route::get('admin/fichaD/{idF}', 'Controladores\\FichaController@detalle');
+Route::resource('admin/estadistica', 'EstadisticaController');
+Route::get('admin/estadisticaServicios/{id}', 'EstadisticaController@Servicios');
+Route::get('admin/estadisticaMascotas/{id}', 'EstadisticaController@Mascotas');

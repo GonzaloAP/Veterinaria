@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Detalle extends Model
 {
@@ -65,5 +66,13 @@ class Detalle extends Model
                 ->where('detalle.estado','=',true)
                 ->orderBy('s.id','asc');
         return $fichaD;
+    }
+
+    public function scope_serviciosMasSolicitados($query)
+    {
+        $servicios =
+            $query->join('servicio as s','s.id','idservicio')
+                  ->select(DB::raw('COUNT(det.idservicio) as id, COUNT(det.idservicio)*100/ (SELECT COUNT(*) FROM servicio as s, detalle as d WHERE s.id=d.idservicio)as porcentaje, serv.descripcion as descripcion FROM detalle det, servicio serv WHERE det.idservicio = serv.id GROUP BY serv.id ORDER BY id DESC'));
+        return $servicios;
     }
 }

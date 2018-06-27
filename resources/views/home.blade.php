@@ -571,7 +571,7 @@
                                      <ul class="collapse">
                                          <li><a href="#"><i class="demo-pli-file-excel"></i>Reportes</a></li>
                                          <li><a href="#"><i class="demo-pli-file-csv"></i>Bitacora</a></li>
-                                         <li><a href="#"><i class="demo-pli-file-html"></i>Estadistica</a></li>
+                                         <li><a href="{{ url('/admin/estadistica') }}"><i class="demo-pli-file-html"></i>Estadistica</a></li>
                                      </ul>
                                  </li>
                             </ul>
@@ -712,7 +712,10 @@
 <!--Flot Chart [ OPTIONAL ]-->
 <script src="{{asset('plugins/flot-charts/jquery.flot.min.js')}}"></script>
 <script src="{{asset('plugins/flot-charts/jquery.flot.resize.min.js')}}"></script>
+<script src="{{asset('plugins/flot-charts/jquery.flot.pie.min.js')}}"></script>
 <script src="{{asset('plugins/flot-charts/jquery.flot.tooltip.min.js')}}"></script>
+<!--Flot Sample [ SAMPLE ]-->
+<script src="{{asset('js/demo/flot-charts.js')}}"></script>
 
 <!--Sparkline [ OPTIONAL ]-->
 <script src="{{asset('plugins/sparkline/jquery.sparkline.min.js')}}"></script>

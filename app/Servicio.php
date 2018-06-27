@@ -39,4 +39,6 @@ class Servicio extends Model
             ->orderBy('id','desc');
     return $servicio;
     }
+
+
 }
