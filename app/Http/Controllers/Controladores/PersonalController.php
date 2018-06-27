@@ -125,10 +125,15 @@ class PersonalController extends Controller
 			'ci' => 'required|max:10',
 			'telefono' => 'required|max:10'
 		]);
-        $requestData = $request->all();
+        //$requestData = $request->all();
         
         $personal = Personal::findOrFail($id);
-        $personal->update($requestData);
+        $personal->nombre = $request->get('nombre');
+        $personal->apellido = $request->get('especie');
+        $personal->ci = $request->get('raza');
+        $personal->telefono = $request->get('sexo');
+        $personal->update();
+        //$personal->update($requestData);
 
         return redirect('admin/personal')->with('flash_message', 'Personal updated!');
     }
