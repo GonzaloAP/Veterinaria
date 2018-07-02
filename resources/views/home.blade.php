@@ -569,7 +569,7 @@
 
                                      <!--Submenu-->
                                      <ul class="collapse">
-                                         <li><a href="#"><i class="demo-pli-file-excel"></i>Reportes</a></li>
+                                         <li><a href="{{ url('/reportecli') }}"><i class="demo-pli-file-excel"></i>Reportes</a></li>
                                          <li><a href="#"><i class="demo-pli-file-csv"></i>Bitacora</a></li>
                                          <li><a href="{{ url('/admin/estadistica') }}"><i class="demo-pli-file-html"></i>Estadistica</a></li>
                                      </ul>

@@ -23,3 +23,9 @@ Route::get('admin/fichaD/{idF}', 'Controladores\\FichaController@detalle');
 Route::resource('admin/estadistica', 'EstadisticaController');
 Route::get('admin/estadisticaServicios/{id}', 'EstadisticaController@Servicios');
 Route::get('admin/estadisticaMascotas/{id}', 'EstadisticaController@Mascotas');
+
+Route::get('/cli/{id}','ReporteController@consultaCliente')->name('cliente');
+Route::get('/mas/{id}','ReporteController@consultaMascota')->name('mascota');
+Route::get('/his/{id}','ReporteController@consultaHistorial')->name('historial');
+Route::get('/reportecli','ReporteController@reportecli')->name('reportecli');
+Route::get('/reportemascota/{id}','ReporteController@reportemascota')->name('reportemascota');
