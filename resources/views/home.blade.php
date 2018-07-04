@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Veterinaria | VLG</title>
+    <title>Veterinaria | Lazzie</title>
 
 
     <!--STYLESHEET-->
@@ -166,8 +166,8 @@
             <div id="page-head">
 
                 <div class="pad-all text-center">
-                    <h3>Veterinaria Online.</h3>
-                    <p>Scroll down to see quick links and overviews of your Server, To do list, Order status or get some Help using Nifty.</p>
+                    <h3>Veterinaria Lazzie.</h3>
+                    <p>Al cuidado de tu mascota!.</p>
                 </div>
             </div>
 
@@ -524,7 +524,7 @@
                                         <li><a href="{{ url('/admin/personal') }}"> <i class="demo-pli-find-user"></i>Personal</a></li>
                                         <li><a href="{{ url('/admin/promocion') }}"><i class="demo-pli-file-text-image"></i>Promocion</a></li>
                                         <li><a href="{{ url('/admin/servicio') }}"><i class="demo-pli-medal-2"></i>Servicio</a></li>
-                                        <li><a href="{{ url('/admin/estado') }}"><i class="demo-pli-support"></i>Estado</a></li>
+                                        {{--<li><a href="{{ url('/admin/estado') }}"><i class="demo-pli-support"></i>Estado</a></li>--}}
 
                                     </ul>
                                 </li>
@@ -664,7 +664,7 @@
         <!-- Visible when footer positions are static -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <div class="hide-fixed pull-right pad-rgt">
-            Veterinaria <strong>VLG</strong> .
+            Veterinaria <strong>Lazzie</strong> .
         </div>
 
 

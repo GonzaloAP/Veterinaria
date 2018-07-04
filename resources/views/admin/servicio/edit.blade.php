@@ -5,11 +5,9 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="panel">
-                    <div class="panel-heading"><h3 class="panel-title" style="font-size: 20px" align="center">Edit Servicio #{{ $servicio->id }}</h3> </div>
+
                     <div class="panel-body">
-                        <a href="{{ url('/admin/servicio') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
+
 
                         @if ($errors->any())
                             <ul class="alert alert-danger">
@@ -23,7 +21,7 @@
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
 
-                            @include ('admin.servicio.form', ['submitButtonText' => 'Update'])
+                            @include ('admin.servicio.form', ['submitButtonText' => 'Guardar'])
 
                         </form>
 

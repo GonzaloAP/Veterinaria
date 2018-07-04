@@ -1,100 +1,3 @@
-{{--
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
---}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -102,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Veterinaria | VLG</title>
+    <title>Veterinaria | Lazzie</title>
 
 
     <!--STYLESHEET-->
@@ -140,7 +43,7 @@
             <a href="index.html" class="navbar-brand">
                 <img src="../img/logo.png" alt="Nifty Logo" class="brand-icon">
                 <div class="brand-title">
-                    <span class="brand-text">Veterinaria VLG</span>
+                    <span class="brand-text">Veterinaria Lazzie</span>
                 </div>
             </a>
         </div>
@@ -193,7 +96,7 @@
         <div id="page-head">
 
             <div class="pad-all text-center">
-                <h3>Veterinaria VLG.</h3>
+                <h3>Veterinaria Lazzie.</h3>
                 <p>Por que el cuidado de tu mascota es tan importante para nosotros como lo es para ti.</p>
             </div>
         </div>
@@ -393,32 +296,21 @@
                     </div>
                 </div>
             </div>
+
+            {{--Informacion General--}}
             <div class="panel">
                 <div class="panel-body">
                     <div class="fixed-fluid">
                         <div class="fixed-sm-250 pull-sm-right fixed-left-border">
 
-
-                            <!-- Tips Widget -->
-                            <!--===================================================-->
-                            <h4>Useful tips</h4>
-                            <p class="text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            <div class="list-group bg-trans">
-                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-purple badge-icon badge-fw pull-left"></span> Lorem ipsum</a>
-                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-info badge-icon badge-fw pull-left"></span> Consectetuer adipiscing</a>
-                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-pink badge-icon badge-fw pull-left"></span> Sed diam nonummy</a>
-                                <a class="list-group-item list-item-sm" href="#"><span class="badge badge-success badge-icon badge-fw pull-left"></span> Euismod tincidunt</a>
-                            </div>
-                            <!--===================================================-->
-
                             <hr class="new-section-md bord-no">
 
                             <!-- Contact us widget -->
                             <!--===================================================-->
-                            <h4>Can't find the answer? </h4>
-                            <p class="text-sm">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
+                            <h4>Mas Informacion</h4>
+                            <p class="text-sm">Para mayor informacion nos puedes contactar a la pagina de Facebook.</p>
                             <div class="pad-top">
-                                <a href="#" class="btn btn-primary">Contact us</a>
+                                <a href="https://www.facebook.com/veterinaria.sudamericana/" class="btn btn-primary">Contactanos</a>
                             </div>
                             <!--===================================================-->
                         </div>
@@ -427,158 +319,36 @@
 
                             <!-- GENERAL -->
                             <!--===================================================-->
-                            <h4 class="pad-btm bord-btm"><i class="demo-pli-gear icon-fw v-middle"></i> General</h4>
+                            <h4 class="pad-btm bord-btm"><i class="demo-pli-gear icon-fw v-middle"></i> Informacion</h4>
                             <div id="demo-gen-faq" class="panel-group panel-group-trans panel-group-condensed accordion">
+
                                 <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-gen-faq-1" data-parent="#demo-gen-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Lorem ipsum dolor sit amet ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse in" id="demo-gen-faq-1">
-                                        <div class="panel-body">
-                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
-                                        </div>
-                                    </div>
+                                    Descripcion: <br>
+                                    Telf. 3524183 <br>
+                                    Clínica Veterinaria para el cuidado de tus mascotas, contamos con servicios de quirófano, internación, refugio de animales y muchos más.
+                                </div>
+                                <br>
+                                <div class="panel">
+                                    <h4 class="pad-btm bord-btm"><i class="demo-pli-clock icon-fw v-middle"></i> Horario</h4>
+                                    De Lunes a Viernes 8:00 - 20:00 <br>
+                                    Sabado y Domingo 8:00 - 12:30 <br>
                                 </div>
                                 <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-gen-faq-2" data-parent="#demo-gen-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Consectetuer adipiscing elit ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-gen-faq-2">
-                                        <div class="panel-body">
-                                            The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
-                                        </div>
-                                    </div>
+                                    <h4 class="pad-btm bord-btm"><i class="demo-pli-male-female icon-fw v-middle"></i> Servicios</h4>
+                                    -Consultas Internas <br>
+                                    -Peluqueria <br>
+                                    -Ecografia <br>
+                                    -Cirugia<br>
                                 </div>
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-gen-faq-3" data-parent="#demo-gen-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Sed diam nonummy nibh euismod tincidunt ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-gen-faq-3">
-                                        <div class="panel-body">
-                                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
-
-
-
-
-                            <!-- ACCOUNT -->
-                            <!--===================================================-->
-                            <h4 class="pad-btm bord-btm"><i class="demo-pli-male-female icon-fw v-middle"></i> Account</h4>
-                            <div id="demo-acc-faq" class="panel-group panel-group-trans panel-group-condensed accordion">
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-acc-faq-1" data-parent="#demo-acc-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Lorem ipsum dolor sit amet ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-acc-faq-1">
-                                        <div class="panel-body">
-                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-acc-faq-2" data-parent="#demo-acc-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Consectetuer adipiscing elit ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-acc-faq-2">
-                                        <div class="panel-body">
-                                            The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-acc-faq-3" data-parent="#demo-acc-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Sed diam nonummy nibh euismod tincidunt ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-acc-faq-3">
-                                        <div class="panel-body">
-                                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-                            <!-- PAYMENT -->
-                            <!--===================================================-->
-                            <h4 class="pad-btm bord-btm v-middl"><i class="demo-pli-coin icon-fw v-middle"></i> Payment</h4>
-                            <div id="demo-pym-faq" class="panel-group panel-group-trans panel-group-condensed accordion">
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-pym-faq-1" data-parent="#demo-pym-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Lorem ipsum dolor sit amet ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-pym-faq-1">
-                                        <div class="panel-body">
-                                            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-pym-faq-2" data-parent="#demo-pym-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Consectetuer adipiscing elit ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse in" id="demo-pym-faq-2">
-                                        <div class="panel-body">
-                                            The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel">
-                                    <div class="panel-heading">
-                                        <p class="panel-title">
-                                            <a href="#demo-pym-faq-3" data-parent="#demo-pym-faq" data-toggle="collapse" class="collapsed">
-                                                <i class="pci-chevron chevron-right"></i> Sed diam nonummy nibh euismod tincidunt ?
-                                            </a>
-                                        </p>
-                                    </div>
-                                    <div class="panel-collapse collapse" id="demo-pym-faq-3">
-                                        <div class="panel-body">
-                                            A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
+            {{--Informacion General--}}
+
+
         </div>
         <!--===================================================-->
         <!--End page content-->
@@ -604,6 +374,8 @@
 <!--Unite Gallery [ OPTIONAL ]-->
 <script src="{{asset('plugins/unitegallery/js/unitegallery.min.js')}}"></script>
 <script src="{{asset('plugins/unitegallery/themes/tiles/ug-theme-tiles.js')}}"></script>
+
+
 
 <!--Custom script [ DEMONSTRATION ]-->
 <!--===================================================-->

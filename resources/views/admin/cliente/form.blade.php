@@ -3,11 +3,11 @@
 
         <div class="panel">
             <div class="panel-heading">
-                        <div class="col-md-offset-0 col-md-1">
-                        </br>
-                        <a href="{{ url('/admin/cliente') }}" class="btn btn-sm btn-default" style="background-color: #edde34" title="Volver Atras">  <i class="demo-pli-arrow-left" aria-hidden="true"></i>Atras</a>
-                        </div>
-                        <h3 class="panel-title">Formulario de Clientes</h3>
+                <div class="col-md-offset-0 col-md-1">
+                    </br>
+                    <a href="{{ url('/admin/cliente') }}" class="btn btn-sm btn-default" style="background-color: #edde34" title="Volver Atras">  <i class="demo-pli-arrow-left" aria-hidden="true"></i>Atras</a>
+                </div>
+                <h3 class="panel-title">Formulario de Clientes</h3>
             </div>
             <form class="panel-body form-horizontal form-padding">
                 </br>

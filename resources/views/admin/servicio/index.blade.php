@@ -10,8 +10,8 @@
 
                     <div class="panel-body">
                         <a href="{{ url('/admin/servicio/create') }}" class="btn btn-success btn-sm"
-                           title="Add New Servicio">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                           title="Nuevo Servicio">
+                            <i class="demo-pli-add" aria-hidden="true"></i> Nuevo
                         </a>
 
                         <form method="GET" action="{{ url('/admin/servicio') }}" accept-charset="UTF-8"
@@ -45,7 +45,7 @@
                                     <th>Descripcion</th>
                                     <th>Precio</th>
                                     <th>PrecioTotal</th>
-                                    <th>Actions</th>
+                                    <th>Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -58,13 +58,13 @@
                                         <td>
                                             <a href="{{ url('/admin/servicio/' . $item->id) }}" title="View Servicio">
                                                 <button class="btn btn-info btn-sm"><i class="fa fa-eye"
-                                                                                       aria-hidden="true"></i> View
+                                                                                       aria-hidden="true"></i> Ver
                                                 </button>
                                             </a>
                                             <a href="{{ url('/admin/servicio/' . $item->id . '/edit') }}"
                                                title="Edit Servicio">
                                                 <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
-                                                                                          aria-hidden="true"></i> Edit
+                                                                                          aria-hidden="true"></i> Editar
                                                 </button>
                                             </a>
 
@@ -75,7 +75,7 @@
                                                 <button type="submit" class="btn btn-danger btn-sm"
                                                         title="Delete Servicio"
                                                         onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                            class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                                            class="fa fa-trash-o" aria-hidden="true"></i> Eliminar
                                                 </button>
                                             </form>
                                         </td>

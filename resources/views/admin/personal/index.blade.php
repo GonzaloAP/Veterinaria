@@ -6,8 +6,8 @@
             <h3 class="panel-title" style="font-size:20px;text-align:center">Personal</h3>
         </div>
         <div class="panel-body">
-            <a href="{{ url('/admin/personal/create') }}" class="btn btn-success btn-sm" title="Add New Personal">
-                <i class="fa fa-plus" aria-hidden="true"></i> Add New
+            <a href="{{ url('/admin/personal/create') }}" class="btn btn-success btn-sm" title="Nuevo Personal">
+                <i class="demo-pli-add" aria-hidden="true"></i> Nuevo
             </a>
 
             <form method="GET" action="{{ url('/admin/personal') }}" accept-charset="UTF-8"
@@ -41,7 +41,7 @@
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Ci</th>
-                        <th>Actions</th>
+                        <th>Acciones</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -52,14 +52,14 @@
                             <td>{{ $item->apellido }}</td>
                             <td>{{ $item->ci }}</td>
                             <td>
-                                <a href="{{ url('/admin/personal/' . $item->id) }}" title="View Personal">
+                                <a href="{{ url('/admin/personal/' . $item->id) }}" title="Ver Personal">
                                     <button class="btn btn-info btn-sm"><i class="fa fa-eye" aria-hidden="true"></i>
-                                        View
+                                        Ver
                                     </button>
                                 </a>
-                                <a href="{{ url('/admin/personal/' . $item->id . '/edit') }}" title="Edit Personal">
+                                <a href="{{ url('/admin/personal/' . $item->id . '/edit') }}" title="Editar Personal">
                                     <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
-                                                                              aria-hidden="true"></i> Edit
+                                                                              aria-hidden="true"></i> Editar
                                     </button>
                                 </a>
 
@@ -67,9 +67,9 @@
                                       accept-charset="UTF-8" style="display:inline">
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
-                                    <button type="submit" class="btn btn-danger btn-sm" title="Delete Personal"
+                                    <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Personal"
                                             onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                                class="fa fa-trash-o" aria-hidden="true"></i> Eliminar
                                     </button>
                                 </form>
                             </td>

@@ -9,8 +9,8 @@
                             Promocion</h3></div>
                     <div class="panel-body">
                         <a href="{{ url('/admin/promocion/create') }}" class="btn btn-success btn-sm"
-                           title="Add New Promocion">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                           title="Nueva Promocion">
+                            <i class="demo-pli-add" aria-hidden="true"></i> Nueva
                         </a>
 
                         <form method="GET" action="{{ url('/admin/promocion') }}" accept-charset="UTF-8"
@@ -44,7 +44,7 @@
                                     <th>Descripcion</th>
                                     <th>Descuento</th>
                                     <th>Servicio</th>
-                                    <th>Actions</th>
+                                    <th>Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -55,15 +55,15 @@
                                         <td>{{ $item->descuento }}</td>
                                         <td>{{ $item->serv }}</td>
                                         <td>
-                                            <a href="{{ url('/admin/promocion/' . $item->id) }}" title="View Promocion">
+                                            <a href="{{ url('/admin/promocion/' . $item->id) }}" title="Ver Promocion">
                                                 <button class="btn btn-info btn-sm"><i class="fa fa-eye"
-                                                                                       aria-hidden="true"></i> View
+                                                                                       aria-hidden="true"></i> Ver
                                                 </button>
                                             </a>
                                             <a href="{{ url('/admin/promocion/' . $item->id . '/edit') }}"
-                                               title="Edit Promocion">
+                                               title="Editar Promocion">
                                                 <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
-                                                                                          aria-hidden="true"></i> Edit
+                                                                                          aria-hidden="true"></i> Editar
                                                 </button>
                                             </a>
 
@@ -72,9 +72,9 @@
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Promocion"
+                                                        title="Eliminar Promocion"
                                                         onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                            class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                                            class="fa fa-trash-o" aria-hidden="true"></i> Eliminar
                                                 </button>
                                             </form>
                                         </td>
