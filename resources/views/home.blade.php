@@ -556,7 +556,7 @@
                                         <li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-photos"></i>Mascota</a></li>
                                         <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-repair"></i>Tratamiento</a></li>
                                         {{--<li><a href="{{ url('/admin/mascota') }}"><i class="demo-pli-file-search"></i>Seguimiento</a></li>--}}
-                                        <li><a href="{{ url('/admin/tratamiento') }}"><i class="demo-pli-file-jpg"></i>Historia Clinica</a></li>
+
 
                                     </ul>
                                 </li>
@@ -570,7 +570,6 @@
                                      <!--Submenu-->
                                      <ul class="collapse">
                                          <li><a href="{{ url('/reportecli') }}"><i class="demo-pli-file-excel"></i>Reportes</a></li>
-                                         <li><a href="#"><i class="demo-pli-file-csv"></i>Bitacora</a></li>
                                          <li><a href="{{ url('/admin/estadistica') }}"><i class="demo-pli-file-html"></i>Estadistica</a></li>
                                      </ul>
                                  </li>
@@ -629,6 +628,18 @@
 
                                         </ul>
                                     </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="demo-pli-gear"></i>
+                                                <span class="menu-title">Herramientas</span>
+                                                <i class="arrow"></i>
+                                            </a>
+
+                                            <!--Submenu-->
+                                            <ul class="collapse">
+                                                <li><a href="{{ url('/reportecli') }}"><i class="demo-pli-file-excel"></i>Reportes</a></li>
+                                            </ul>
+                                        </li>
                                     <!--Menu del Personal (Fin)-->
                                     @endif
                                 </ul>

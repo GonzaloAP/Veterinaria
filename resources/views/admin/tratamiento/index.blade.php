@@ -11,8 +11,8 @@
                             Tratamiento</h3></div>
                     <div class="panel-body">
                         <a href="{{ url('/admin/tratamiento/create') }}" class="btn btn-success btn-sm"
-                           title="Add New Tratamiento">
-                            <i class="fa fa-plus" aria-hidden="true"></i> Add New
+                           title="Nuevo Tratamiento">
+                            <i class="demo-pli-add" aria-hidden="true"></i> Nuevo
                         </a>
 
                         <form method="GET" action="{{ url('/admin/tratamiento') }}" accept-charset="UTF-8"
@@ -46,7 +46,7 @@
                                     <th>Descripcion</th>
                                     <th>Fechar</th>
                                     <th>Plazo</th>
-                                    <th>Actions</th>
+                                    <th>Acciones</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -58,15 +58,15 @@
                                         <td>{{ $item->plazo }}</td>
                                         <td>
                                             <a href="{{ url('/admin/tratamiento/' . $item->id) }}"
-                                               title="View Tratamiento">
+                                               title="Ver Tratamiento">
                                                 <button class="btn btn-info btn-sm"><i class="fa fa-eye"
-                                                                                       aria-hidden="true"></i> View
+                                                                                       aria-hidden="true"></i> Ver
                                                 </button>
                                             </a>
                                             <a href="{{ url('/admin/tratamiento/' . $item->id . '/edit') }}"
-                                               title="Edit Tratamiento">
+                                               title="Editar Tratamiento">
                                                 <button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o"
-                                                                                          aria-hidden="true"></i> Edit
+                                                                                          aria-hidden="true"></i> Editar
                                                 </button>
                                             </a>
 
@@ -76,9 +76,9 @@
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Tratamiento"
+                                                        title="Eliminar Tratamiento"
                                                         onclick="return confirm(&quot;Confirm delete?&quot;)"><i
-                                                            class="fa fa-trash-o" aria-hidden="true"></i> Delete
+                                                            class="fa fa-trash-o" aria-hidden="true"></i> Eliminar
                                                 </button>
                                             </form>
                                         </td>
