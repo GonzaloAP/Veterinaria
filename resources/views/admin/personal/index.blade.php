@@ -68,7 +68,7 @@
                                     {{ method_field('DELETE') }}
                                     {{ csrf_field() }}
                                     <button type="submit" class="btn btn-danger btn-sm" title="Eliminar Personal"
-                                            onclick="return confirm(&quot;Confirm delete?&quot;)"><i
+                                            onclick="return confirm(&quot;Esta Seguro de Realizar esta Accion ?&quot;)"><i
                                                 class="fa fa-trash-o" aria-hidden="true"></i> Eliminar
                                     </button>
                                 </form>

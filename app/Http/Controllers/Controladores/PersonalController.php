@@ -129,9 +129,9 @@ class PersonalController extends Controller
         
         $personal = Personal::findOrFail($id);
         $personal->nombre = $request->get('nombre');
-        $personal->apellido = $request->get('especie');
-        $personal->ci = $request->get('raza');
-        $personal->telefono = $request->get('sexo');
+        $personal->apellido = $request->get('apellido');
+        $personal->ci = $request->get('ci');
+        $personal->telefono = $request->get('telefono');
         $personal->update();
         //$personal->update($requestData);
 

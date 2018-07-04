@@ -58,7 +58,8 @@
                         <select name="cliente" class="form-control">
                             <option value="" disabled selected>Seleccione un Cliente</option>
                             @foreach($cliente as $c)
-                                <option value={{$c->id}}>{{$c->nombre}}</option>
+                                <option value={{$c->id}}>{{' '.$c->nombre .' '.$c->apellido}}</option>
+
                             @endforeach
 
                         </select>

@@ -5,7 +5,7 @@
     <div class="panel">
         <div class="panel-heading">
             </br>
-            <h3 class="panel-title" style="font-size:20px;text-align:center">Reporte para los clientes</h3>
+            <h3 class="panel-title" style="font-size:20px;text-align:center">Reporte de los clientes</h3>
         </div>
         <div class="panel-body">
             <table id="demo-custom-toolbar" class="demo-add-niftycheck" data-toggle="table"

@@ -44,7 +44,7 @@ class Cliente extends Model
     public function scope_getClientesId($query)
     {
         $cliente = $query
-            ->select(DB::raw('concat(nombre," ",apellido) as nombre'),'id')->distinct()
+            ->select('nombre','apellido','id')->distinct()
             ->where ('estado',true);
         return $cliente;
     }
